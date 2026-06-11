@@ -1,0 +1,60 @@
+{
+  "version": 2,
+  "public": true,
+  "buildCommand": "npm run build || echo 'No build needed'",
+  "outputDirectory": "public",
+  "headers": [
+    {
+      "source": "/src/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/assets/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    }
+  ],
+  "routes": [
+    {
+      "src": "/src/(.*)",
+      "dest": "/$1"
+    },
+    {
+      "src": "/assets/(.*)",
+      "dest": "/$1"
+    },
+    {
+      "src": "/basketball",
+      "dest": "/pages/basketball/basketball.html"
+    },
+    {
+      "src": "/hockey",
+      "dest": "/pages/hockey/hockey.html"
+    },
+    {
+      "src": "/volleyball",
+      "dest": "/pages/volleyball/volleyball.html"
+    },
+    {
+      "src": "/american-football",
+      "dest": "/pages/american-football/american-football.html"
+    },
+    {
+      "src": "/fighting",
+      "dest": "/pages/fighting/fighting.html"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/$1"
+    }
+  ]
+}

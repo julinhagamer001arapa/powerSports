@@ -210,11 +210,11 @@ A Vercel facilita a publicação de projetos diretamente a partir de um reposit�
 2. No painel de controle principal da Vercel, clique no botão **"Add New"** e selecione **"Project"**.
 3. Na lista de repositórios apresentada, localize o repositório do seu projeto do GitHub e clique em **"Import"**.
 4. Defina o nome do seu projeto na Vercel.
-5. Em **Build and Development Settings**, você pode definir as configurações de build. Inspecione o arquivo `package.json` do seu projeto para verificar a estrutura dos scripts de inicialização.
-   - **Framework Preset**: Caso utilize HTML/JS puro ou Express Node.js, selecione **"Other"**.
-   - **Build Command**: Deixe em branco se for apenas um projeto de arquivos estáticos, ou preencha de acordo com os scripts do seu projeto.
-   - **Output Directory**: Caso utilize pastas organizadas, preencha com a pasta que contém a sua landing page principal (ex: `public` ou `dist`).
-   - **Install Command**: Geralmente `npm install`.
+5. Em **Build and Development Settings**, você pode definir as configurações de build. Seu projeto utiliza um servidor Express Node.js:
+   - **Framework Preset**: Selecione **"Other"** (para Express Node.js com servidor customizado).
+   - **Build Command**: Deixe em branco (o projeto não requer build step).
+   - **Output Directory**: `/public` (diretório contém o arquivo `index.html` e as páginas estáticas).
+   - **Install Command**: `npm install`.
 6. Expanda a seção **"Environment Variables"** para adicionar as credenciais da RapidAPI (veja o detalhamento na seção 9 abaixo).
 7. Clique em **"Deploy"**. O processo levará alguns instantes e, ao final, você receberá um endereço web público para o seu site.
 
@@ -301,23 +301,47 @@ const data = await response.json();
 
 ## 11. Suggested `vercel.json`
 
-O arquivo `vercel.json` na raiz do projeto é utilizado para configurar redirecionamentos, rotas e Headers na Vercel.
+O arquivo `vercel.json` na raiz do projeto é utilizado para configurar redirecionamentos, rotas, Headers e comportamento de arquivos estáticos na Vercel.
 
-Exemplo de configuração básica para projetos com frontend estático:
+### Configuração Recomendada (Express Server + Static Assets)
 
-```json
-{
-  "version": 2,
-  "public": true
-}
-```
-
-Para garantir o redirecionamento adequado para páginas estáticas de esportes organizadas em pastas, você pode configurar as rotas explicitamente:
+Como seu projeto utiliza um servidor Express que mapeia `/public` como raiz, `/src` e `/assets`, configure o `vercel.json` para garantir que CSS, JavaScript e imagens sejam servidos corretamente:
 
 ```json
 {
   "version": 2,
+  "public": true,
+  "buildCommand": "npm run build || echo 'No build needed'",
+  "outputDirectory": "public",
+  "headers": [
+    {
+      "source": "/src/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/assets/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    }
+  ],
   "routes": [
+    {
+      "src": "/src/(.*)",
+      "dest": "/$1"
+    },
+    {
+      "src": "/assets/(.*)",
+      "dest": "/$1"
+    },
     {
       "src": "/basketball",
       "dest": "/pages/basketball/basketball.html"
@@ -337,12 +361,30 @@ Para garantir o redirecionamento adequado para páginas estáticas de esportes o
     {
       "src": "/fighting",
       "dest": "/pages/fighting/fighting.html"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/$1"
     }
   ]
 }
 ```
 
-Ajuste este arquivo de acordo com a nomenclatura e organização final dos diretórios de páginas estáticas do seu projeto.
+### Verificação de Caminhos de CSS
+
+Certifique-se de que seus arquivos HTML referenciam o CSS corretamente:
+
+**Exemplo correto:**
+```html
+<link rel="stylesheet" href="/src/css/styles.css">
+<link rel="stylesheet" href="/src/css/global/base.css">
+```
+
+> [!IMPORTANT]
+> - Os arquivos CSS devem estar localizados em `/src/css/` no seu projeto local.
+> - A Vercel precisa mapear corretamente o diretório `/src` através do `vercel.json`.
+> - Imagens e assets devem estar em `/assets/` e também serão servidos através das rotas configuradas.
+> - Se os arquivos CSS ainda não carregarem, verifique o console do navegador (`F12`) para confirmar os caminhos exatos solicitados.
 
 ---
 
