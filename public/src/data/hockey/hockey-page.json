@@ -1,0 +1,950 @@
+{
+  "page": {
+    "id": "powersport-hockey-home",
+    "name": "PowerSport - Hóquei no Gelo",
+    "type": "sports-dashboard-landing-page",
+    "language": "pt-BR",
+    "theme": "dark-ice-blue",
+    "description": "Página esportiva de hóquei no gelo com hero principal, placares, classificação, artilheiros, estatísticas, notícias, calendário e chamadas para transmissão ao vivo.",
+    "apiConnected": true,
+    "recommendedFileName": "hockey-page.json"
+  },
+  "brand": {
+    "name": "PowerSport",
+    "logoText": {
+      "main": "Power",
+      "highlight": "Sport"
+    },
+    "logoStyle": {
+      "mainColor": "#FFFFFF",
+      "highlightColor": "#00AFFF",
+      "fontWeight": 900,
+      "fontStyle": "italic",
+      "letterSpacing": "-0.04em",
+      "textTransform": "uppercase"
+    },
+    "slogan": "Velocidade. Força. Precisão."
+  },
+  "assets": {
+    "basePath": "./assets/",
+    "images": {
+      "referenceMockup": {
+        "fileName": "ChatGPT Image 24 de abr. de 2026, 10_49_39.png",
+        "role": "visual-reference",
+        "usage": "Imagem de referência geral da página completa. Não precisa ser usada diretamente no layout final.",
+        "recommendedAlt": "Mockup completo da página PowerSport de hóquei no gelo"
+      },
+      "heroBackground": {
+        "fileName": "FundoHoquei.png",
+        "role": "hero-background",
+        "usage": "Imagem principal de fundo da seção hero, com gelo, impacto visual e iluminação azul.",
+        "recommendedAlt": "Fundo cinematográfico de arena de hóquei com gelo e luzes azuis",
+        "css": {
+          "objectFit": "cover",
+          "objectPosition": "center center",
+          "overlay": "linear-gradient(90deg, rgba(1,8,20,0.95) 0%, rgba(1,8,20,0.65) 38%, rgba(1,8,20,0.2) 70%, rgba(1,8,20,0.85) 100%)"
+        }
+      },
+      "newsTeamHuddle": {
+        "fileName": "FeedHoquei-1.png",
+        "role": "news-card-image",
+        "usage": "Imagem para notícia sobre equipe, liderança da liga ou bastidores.",
+        "recommendedAlt": "Equipe de hóquei reunida na arena",
+        "recommendedSection": "featuredNews",
+        "recommendedNewsId": "news-004",
+        "css": {
+          "objectFit": "cover",
+          "objectPosition": "center center"
+        }
+      },
+      "newsGoalkeeper": {
+        "fileName": "FeedHoquei-2.png",
+        "role": "news-card-image",
+        "usage": "Imagem para notícia sobre defesa, goleiro ou jogada decisiva.",
+        "recommendedAlt": "Jogada defensiva em partida de hóquei no gelo",
+        "recommendedSection": "featuredNews",
+        "recommendedNewsId": "news-003",
+        "css": {
+          "objectFit": "cover",
+          "objectPosition": "center center"
+        }
+      },
+      "newsActionPlayer": {
+        "fileName": "FeedHoquei-3.png",
+        "role": "news-card-image",
+        "usage": "Imagem para notícia de análise da rodada ou ação ofensiva.",
+        "recommendedAlt": "Atleta em movimento durante partida de hóquei no gelo",
+        "recommendedSection": "featuredNews",
+        "recommendedNewsId": "news-002",
+        "css": {
+          "objectFit": "cover",
+          "objectPosition": "center center"
+        }
+      },
+      "newsCelebration": {
+        "fileName": "FeedHoquei-4.png",
+        "role": "highlight-video-or-news-image",
+        "usage": "Imagem para destaque da semana, melhores jogadas ou comemoração.",
+        "recommendedAlt": "Atleta de hóquei comemorando em arena iluminada",
+        "recommendedSection": "momentHighlight",
+        "recommendedNewsId": "news-001",
+        "css": {
+          "objectFit": "cover",
+          "objectPosition": "center center"
+        }
+      },
+      "heroPlayer": {
+        "fileName": "JogadorHoquei.png",
+        "role": "hero-foreground-player",
+        "usage": "Imagem recortada do atleta em primeiro plano na seção hero.",
+        "recommendedAlt": "Atleta de hóquei no gelo em ação com uniforme azul",
+        "css": {
+          "position": "absolute",
+          "right": "18%",
+          "bottom": "-2%",
+          "widthDesktop": "43vw",
+          "maxWidth": "690px",
+          "minWidth": "360px",
+          "zIndex": 3,
+          "filter": "drop-shadow(0 0 28px rgba(0, 153, 255, 0.45))"
+        }
+      }
+    }
+  },
+  "theme": {
+    "colors": {
+      "backgroundPrimary": "#020814",
+      "backgroundSecondary": "#06101F",
+      "backgroundTertiary": "#071B31",
+      "surfacePrimary": "rgba(3, 18, 35, 0.82)",
+      "surfaceSecondary": "rgba(0, 35, 70, 0.72)",
+      "surfaceCard": "rgba(2, 20, 39, 0.86)",
+      "surfaceGlass": "rgba(6, 28, 55, 0.58)",
+      "borderPrimary": "#008CFF",
+      "borderSecondary": "rgba(0, 174, 255, 0.45)",
+      "borderMuted": "rgba(111, 178, 227, 0.18)",
+      "textPrimary": "#F4FAFF",
+      "textSecondary": "#B8D4EF",
+      "textMuted": "#7194B7",
+      "textDark": "#03111F",
+      "accentPrimary": "#00B7FF",
+      "accentSecondary": "#0077FF",
+      "accentTertiary": "#004CFF",
+      "accentGlow": "rgba(0, 183, 255, 0.55)",
+      "success": "#37F2A2",
+      "warning": "#FFD447",
+      "danger": "#FF4664",
+      "rankGold": "#FFD84A",
+      "rankSilver": "#C9D6E6",
+      "rankBronze": "#D18945",
+      "white": "#FFFFFF",
+      "black": "#000000"
+    },
+    "gradients": {
+      "bodyBackground": "radial-gradient(circle at 50% 0%, rgba(0, 85, 180, 0.35) 0%, rgba(2, 8, 20, 1) 45%, rgba(0, 0, 0, 1) 100%)",
+      "heroOverlay": "linear-gradient(90deg, rgba(1,8,20,0.96) 0%, rgba(1,8,20,0.76) 35%, rgba(1,8,20,0.22) 68%, rgba(1,8,20,0.86) 100%)",
+      "cardBackground": "linear-gradient(180deg, rgba(4, 28, 54, 0.94) 0%, rgba(2, 13, 28, 0.96) 100%)",
+      "buttonPrimary": "linear-gradient(135deg, #00AFFF 0%, #005BFF 100%)",
+      "buttonSecondary": "linear-gradient(135deg, rgba(0, 183, 255, 0.22) 0%, rgba(0, 75, 180, 0.45) 100%)",
+      "bottomStats": "linear-gradient(90deg, rgba(3, 23, 44, 0.96) 0%, rgba(3, 37, 69, 0.82) 100%)"
+    },
+    "effects": {
+      "glassBlur": "blur(14px)",
+      "cardShadow": "0 0 22px rgba(0, 140, 255, 0.28)",
+      "cardHoverShadow": "0 0 32px rgba(0, 183, 255, 0.48)",
+      "textGlow": "0 0 14px rgba(0, 183, 255, 0.55)",
+      "imageDarkOverlay": "rgba(1, 8, 20, 0.38)",
+      "dividerGlow": "linear-gradient(90deg, transparent, rgba(0, 183, 255, 0.85), transparent)"
+    },
+    "borderRadius": {
+      "xs": "4px",
+      "sm": "8px",
+      "md": "12px",
+      "lg": "18px",
+      "xl": "28px",
+      "full": "999px"
+    },
+    "spacing": {
+      "pagePaddingDesktop": "32px",
+      "pagePaddingTablet": "22px",
+      "pagePaddingMobile": "16px",
+      "sectionGap": "18px",
+      "cardPadding": "16px",
+      "cardPaddingCompact": "12px"
+    }
+  },
+  "typography": {
+    "fontFamilies": {
+      "display": "'Bebas Neue', 'Oswald', 'Impact', sans-serif",
+      "heading": "'Oswald', 'Roboto Condensed', sans-serif",
+      "body": "'Inter', 'Roboto', Arial, sans-serif",
+      "numbers": "'Rajdhani', 'Roboto Condensed', sans-serif"
+    },
+    "styles": {
+      "heroTitle": {
+        "fontFamily": "display",
+        "fontSizeDesktop": "clamp(4.5rem, 8vw, 8.8rem)",
+        "fontSizeMobile": "clamp(3.2rem, 14vw, 5.2rem)",
+        "fontWeight": 900,
+        "lineHeight": 0.88,
+        "letterSpacing": "-0.035em",
+        "textTransform": "uppercase",
+        "color": "#F4FAFF",
+        "textShadow": "0 0 22px rgba(0, 183, 255, 0.32)"
+      },
+      "heroSubtitle": {
+        "fontFamily": "heading",
+        "fontSizeDesktop": "1.7rem",
+        "fontSizeMobile": "1.25rem",
+        "fontWeight": 800,
+        "fontStyle": "italic",
+        "textTransform": "uppercase",
+        "color": "#00B7FF"
+      },
+      "sectionTitle": {
+        "fontFamily": "heading",
+        "fontSize": "1.15rem",
+        "fontWeight": 800,
+        "fontStyle": "italic",
+        "textTransform": "uppercase",
+        "color": "#F4FAFF"
+      },
+      "bodyText": {
+        "fontFamily": "body",
+        "fontSize": "0.95rem",
+        "fontWeight": 400,
+        "lineHeight": 1.5,
+        "color": "#B8D4EF"
+      },
+      "smallLabel": {
+        "fontFamily": "heading",
+        "fontSize": "0.72rem",
+        "fontWeight": 700,
+        "textTransform": "uppercase",
+        "color": "#7194B7"
+      },
+      "statNumber": {
+        "fontFamily": "numbers",
+        "fontSize": "1.35rem",
+        "fontWeight": 800,
+        "color": "#00B7FF"
+      }
+    }
+  },
+  "layout": {
+    "viewport": {
+      "maxWidth": "1920px",
+      "minHeight": "100vh"
+    },
+    "structure": [
+      "header",
+      "hero",
+      "mainDashboardGrid",
+      "newsAndCalendarGrid",
+      "bottomHighlights"
+    ],
+    "grid": {
+      "desktop": {
+        "columns": 12,
+        "gap": "18px",
+        "areas": {
+          "upcomingGames": "span 3",
+          "standings": "span 3",
+          "topScorers": "span 3",
+          "leagueStats": "span 3",
+          "featuredNews": "span 7",
+          "leagueCalendar": "span 5"
+        }
+      },
+      "tablet": {
+        "columns": 6,
+        "gap": "16px"
+      },
+      "mobile": {
+        "columns": 1,
+        "gap": "14px"
+      }
+    },
+    "breakpoints": {
+      "mobile": "0px",
+      "tablet": "768px",
+      "desktop": "1200px",
+      "wide": "1440px"
+    }
+  },
+  "api": {
+    "enabled": true,
+    "baseUrl": "/api",
+    "timeoutMs": 12000,
+    "fallbackToStaticData": true,
+    "endpoints": {
+      "teams": {
+        "method": "GET",
+        "path": "/teams",
+        "bindTo": "data.teams"
+      },
+      "matches": {
+        "method": "GET",
+        "path": "/matches",
+        "bindTo": "data.matches"
+      },
+      "standings": {
+        "method": "GET",
+        "path": "/standings",
+        "bindTo": "data.standings"
+      },
+      "topScorers": {
+        "method": "GET",
+        "path": "/players/top-scorers",
+        "bindTo": "data.topScorers"
+      },
+      "leagueStats": {
+        "method": "GET",
+        "path": "/league/stats",
+        "bindTo": "data.leagueStats"
+      },
+      "news": {
+        "method": "GET",
+        "path": "/news",
+        "bindTo": "data.featuredNews"
+      },
+      "videos": {
+        "method": "GET",
+        "path": "/videos/highlights",
+        "bindTo": "data.momentHighlight"
+      },
+      "calendar": {
+        "method": "GET",
+        "path": "/calendar",
+        "bindTo": "data.leagueCalendar"
+      }
+    },
+    "expectedResponseShape": {
+      "teams": "Array<{ id, name, shortName, logo, primaryColor, secondaryColor }>",
+      "matches": "Array<{ id, date, time, homeTeamId, awayTeamId, arena, status }>",
+      "standings": "Array<{ position, teamId, games, wins, losses, points }>",
+      "topScorers": "Array<{ position, playerName, teamId, goals, avatar }>",
+      "leagueStats": "Array<{ id, label, value, unit, icon }>",
+      "news": "Array<{ id, category, title, date, image, url }>",
+      "videos": "Array<{ id, title, subtitle, thumbnail, videoUrl }>",
+      "calendar": "Array<{ id, date, time, homeTeamId, awayTeamId, arena }>"
+    }
+  },
+  "navigation": {
+    "activeItem": "inicio",
+    "items": [
+      {
+        "id": "inicio",
+        "label": "Início",
+        "href": "#inicio"
+      },
+      {
+        "id": "jogos",
+        "label": "Jogos",
+        "href": "#jogos"
+      },
+      {
+        "id": "noticias",
+        "label": "Notícias",
+        "href": "#noticias"
+      },
+      {
+        "id": "classificacao",
+        "label": "Classificação",
+        "href": "#classificacao"
+      },
+      {
+        "id": "atletas",
+        "label": "Atletas",
+        "href": "#atletas"
+      },
+      {
+        "id": "videos",
+        "label": "Vídeos",
+        "href": "#videos"
+      },
+      {
+        "id": "contato",
+        "label": "Contato",
+        "href": "#contato"
+      }
+    ],
+    "actions": [
+      {
+        "id": "search",
+        "type": "icon-button",
+        "icon": "search",
+        "ariaLabel": "Pesquisar"
+      },
+      {
+        "id": "notifications",
+        "type": "icon-button",
+        "icon": "bell",
+        "ariaLabel": "Notificações"
+      },
+      {
+        "id": "profile",
+        "type": "icon-button",
+        "icon": "user",
+        "ariaLabel": "Perfil"
+      },
+      {
+        "id": "live",
+        "type": "primary-button",
+        "label": "Ao Vivo",
+        "icon": "broadcast",
+        "href": "#ao-vivo"
+      }
+    ]
+  },
+  "sections": {
+    "header": {
+      "id": "site-header",
+      "position": "fixed",
+      "height": "72px",
+      "zIndex": 20,
+      "background": "linear-gradient(180deg, rgba(1,8,20,0.92) 0%, rgba(1,8,20,0.42) 100%)",
+      "backdropFilter": "blur(16px)",
+      "borderBottom": "1px solid rgba(0, 183, 255, 0.12)"
+    },
+    "hero": {
+      "id": "inicio",
+      "heightDesktop": "560px",
+      "heightMobile": "760px",
+      "backgroundImage": "FundoHoquei.png",
+      "foregroundImage": "JogadorHoquei.png",
+      "content": {
+        "eyebrow": "",
+        "title": "Hóquei no Gelo",
+        "subtitle": "Velocidade. Força. Precisão.",
+        "description": "No gelo, cada segundo importa. A vitória é de quem controla o jogo.",
+        "primaryButton": {
+          "label": "Acompanhar ao vivo",
+          "icon": "broadcast",
+          "href": "#ao-vivo"
+        }
+      },
+      "visualRules": {
+        "keepPlayerOnRightDesktop": true,
+        "textColumnWidth": "46%",
+        "avoidTextOverPlayer": true,
+        "applyDarkGradientBehindText": true
+      }
+    },
+    "momentHighlight": {
+      "id": "destaque-do-momento",
+      "title": "Destaque do Momento",
+      "type": "video-highlight-card",
+      "position": "hero-right",
+      "dataSource": "api.endpoints.videos",
+      "fallbackDataId": "highlight-001",
+      "image": "FeedHoquei-4.png",
+      "content": {
+        "title": "Golaço da Semana!",
+        "subtitle": "Melhores jogadas da rodada",
+        "buttonLabel": "Assistir agora"
+      }
+    },
+    "upcomingGames": {
+      "id": "proximos-jogos",
+      "title": "Próximos Jogos",
+      "type": "match-list-card",
+      "dataSource": "api.endpoints.matches",
+      "maxItems": 3,
+      "action": {
+        "label": "Ver todos",
+        "href": "#jogos"
+      }
+    },
+    "standings": {
+      "id": "classificacao",
+      "title": "Classificação",
+      "type": "standings-table-card",
+      "dataSource": "api.endpoints.standings",
+      "columns": [
+        "Pos",
+        "Time",
+        "J",
+        "V",
+        "D",
+        "PTS"
+      ],
+      "maxItems": 5,
+      "action": {
+        "label": "Ver tabela",
+        "href": "#classificacao"
+      }
+    },
+    "topScorers": {
+      "id": "artilheiros",
+      "title": "Artilheiros",
+      "type": "ranking-card",
+      "dataSource": "api.endpoints.topScorers",
+      "maxItems": 3,
+      "action": {
+        "label": "Ver todos",
+        "href": "#atletas"
+      }
+    },
+    "leagueStats": {
+      "id": "estatisticas-da-liga",
+      "title": "Estatísticas da Liga",
+      "type": "stats-list-card",
+      "dataSource": "api.endpoints.leagueStats",
+      "action": {
+        "label": "Ver todas",
+        "href": "#estatisticas"
+      }
+    },
+    "featuredNews": {
+      "id": "noticias",
+      "title": "Notícias em Destaque",
+      "type": "news-grid-card",
+      "dataSource": "api.endpoints.news",
+      "maxItems": 4,
+      "action": {
+        "label": "Ver todas",
+        "href": "#noticias"
+      }
+    },
+    "leagueCalendar": {
+      "id": "calendario-da-liga",
+      "title": "Calendário da Liga",
+      "type": "calendar-card",
+      "dataSource": "api.endpoints.calendar",
+      "maxItems": 4,
+      "action": {
+        "label": "Ver calendário",
+        "href": "#calendario"
+      }
+    },
+    "bottomHighlights": {
+      "id": "resumo-da-liga",
+      "type": "horizontal-feature-strip",
+      "itemsPerRowDesktop": 4,
+      "itemsPerRowMobile": 1
+    }
+  },
+  "data": {
+    "teams": [
+      {
+        "id": "ice-panthers",
+        "name": "Ice Panthers",
+        "shortName": "ICE",
+        "logo": "team-ice-panthers.svg",
+        "primaryColor": "#0A7CFF",
+        "secondaryColor": "#DDF2FF"
+      },
+      {
+        "id": "frost-wolves",
+        "name": "Frost Wolves",
+        "shortName": "FRO",
+        "logo": "team-frost-wolves.svg",
+        "primaryColor": "#1C91FF",
+        "secondaryColor": "#B7DFFF"
+      },
+      {
+        "id": "glacier-kings",
+        "name": "Glacier Kings",
+        "shortName": "GLA",
+        "logo": "team-glacier-kings.svg",
+        "primaryColor": "#A9E8FF",
+        "secondaryColor": "#005BFF"
+      },
+      {
+        "id": "north-storm",
+        "name": "North Storm",
+        "shortName": "NOR",
+        "logo": "team-north-storm.svg",
+        "primaryColor": "#006BFF",
+        "secondaryColor": "#FFFFFF"
+      },
+      {
+        "id": "arctic-blizzard",
+        "name": "Arctic Blizzard",
+        "shortName": "ARC",
+        "logo": "team-arctic-blizzard.svg",
+        "primaryColor": "#8DDCFF",
+        "secondaryColor": "#102C5C"
+      }
+    ],
+    "matches": [
+      {
+        "id": "match-001",
+        "date": "24 MAI",
+        "time": "19:30",
+        "homeTeamId": "ice-panthers",
+        "awayTeamId": "frost-wolves",
+        "arena": "Gelada Arena",
+        "status": "scheduled"
+      },
+      {
+        "id": "match-002",
+        "date": "25 MAI",
+        "time": "18:00",
+        "homeTeamId": "glacier-kings",
+        "awayTeamId": "north-storm",
+        "arena": "Polar Dome",
+        "status": "scheduled"
+      },
+      {
+        "id": "match-003",
+        "date": "26 MAI",
+        "time": "20:00",
+        "homeTeamId": "arctic-blizzard",
+        "awayTeamId": "ice-panthers",
+        "arena": "Frozen Stadium",
+        "status": "scheduled"
+      },
+      {
+        "id": "match-004",
+        "date": "27 MAI",
+        "time": "19:00",
+        "homeTeamId": "frost-wolves",
+        "awayTeamId": "glacier-kings",
+        "arena": "Wolf Arena",
+        "status": "scheduled"
+      }
+    ],
+    "standings": [
+      {
+        "position": 1,
+        "teamId": "glacier-kings",
+        "games": 28,
+        "wins": 22,
+        "losses": 4,
+        "points": 68
+      },
+      {
+        "position": 2,
+        "teamId": "north-storm",
+        "games": 28,
+        "wins": 19,
+        "losses": 6,
+        "points": 58
+      },
+      {
+        "position": 3,
+        "teamId": "ice-panthers",
+        "games": 28,
+        "wins": 17,
+        "losses": 7,
+        "points": 51
+      },
+      {
+        "position": 4,
+        "teamId": "frost-wolves",
+        "games": 28,
+        "wins": 14,
+        "losses": 10,
+        "points": 42
+      },
+      {
+        "position": 5,
+        "teamId": "arctic-blizzard",
+        "games": 28,
+        "wins": 11,
+        "losses": 13,
+        "points": 33
+      }
+    ],
+    "topScorers": [
+      {
+        "position": 1,
+        "playerName": "A. Johnson",
+        "teamId": "glacier-kings",
+        "goals": 32,
+        "avatar": "player-a-johnson.png"
+      },
+      {
+        "position": 2,
+        "playerName": "M. Pettersson",
+        "teamId": "north-storm",
+        "goals": 28,
+        "avatar": "player-m-pettersson.png"
+      },
+      {
+        "position": 3,
+        "playerName": "L. Andersson",
+        "teamId": "ice-panthers",
+        "goals": 25,
+        "avatar": "player-l-andersson.png"
+      }
+    ],
+    "leagueStats": [
+      {
+        "id": "average-goals",
+        "label": "Média de gols por jogo",
+        "value": "4.8",
+        "unit": "",
+        "icon": "puck"
+      },
+      {
+        "id": "attack-efficiency",
+        "label": "% de eficiência de ataque",
+        "value": "18.7",
+        "unit": "%",
+        "icon": "target"
+      },
+      {
+        "id": "saves-per-game",
+        "label": "Defesas por jogo",
+        "value": "28.3",
+        "unit": "",
+        "icon": "shield"
+      },
+      {
+        "id": "penalties-per-game",
+        "label": "Punições por jogo",
+        "value": "6.2",
+        "unit": "",
+        "icon": "penalty"
+      }
+    ],
+    "momentHighlight": {
+      "id": "highlight-001",
+      "label": "Destaque do Momento",
+      "title": "Golaço da Semana!",
+      "subtitle": "Melhores jogadas da rodada",
+      "thumbnail": "FeedHoquei-4.png",
+      "videoUrl": "https://www.youtube.com/watch?v=sWbVpxf8YBI&msockid=a19a64c164e111f18ffb3ce96b6ac5ca",
+      "buttonLabel": "Assistir agora"
+    },
+    "featuredNews": [
+      {
+        "id": "news-001",
+        "category": "Oficial",
+        "title": "Glacier Kings contrata novo atacante estrela",
+        "date": "23 MAI 2024",
+        "image": "FeedHoquei-4.png",
+        "url": "#noticia-001"
+      },
+      {
+        "id": "news-002",
+        "category": "Análise",
+        "title": "Análise completa da última rodada",
+        "date": "22 MAI 2024",
+        "image": "FeedHoquei-3.png",
+        "url": "#noticia-002"
+      },
+      {
+        "id": "news-003",
+        "category": "Destaque",
+        "title": "Defesa espetacular garante a vitória",
+        "date": "21 MAI 2024",
+        "image": "FeedHoquei-2.png",
+        "url": "#noticia-003"
+      },
+      {
+        "id": "news-004",
+        "category": "Equipe",
+        "title": "Ice Panthers lidera com folga a liga",
+        "date": "20 MAI 2024",
+        "image": "FeedHoquei-1.png",
+        "url": "#noticia-004"
+      }
+    ],
+    "leagueCalendar": [
+      {
+        "id": "calendar-001",
+        "date": "24 MAI",
+        "time": "19:30",
+        "homeTeamId": "ice-panthers",
+        "awayTeamId": "frost-wolves",
+        "arena": "Gelada Arena"
+      },
+      {
+        "id": "calendar-002",
+        "date": "25 MAI",
+        "time": "18:00",
+        "homeTeamId": "glacier-kings",
+        "awayTeamId": "north-storm",
+        "arena": "Polar Dome"
+      },
+      {
+        "id": "calendar-003",
+        "date": "26 MAI",
+        "time": "20:00",
+        "homeTeamId": "arctic-blizzard",
+        "awayTeamId": "ice-panthers",
+        "arena": "Frozen Stadium"
+      },
+      {
+        "id": "calendar-004",
+        "date": "27 MAI",
+        "time": "19:00",
+        "homeTeamId": "frost-wolves",
+        "awayTeamId": "glacier-kings",
+        "arena": "Wolf Arena"
+      }
+    ],
+    "bottomHighlights": [
+      {
+        "id": "champion",
+        "icon": "trophy",
+        "title": "5x Campeão",
+        "highlight": "Glacier Kings",
+        "description": "Maior campeão da liga"
+      },
+      {
+        "id": "fans",
+        "icon": "fans",
+        "title": "Melhor torcida",
+        "highlight": "Frost Wolves",
+        "description": "Paixão que não para"
+      },
+      {
+        "id": "season-games",
+        "icon": "puck-motion",
+        "title": "+120 Jogos",
+        "highlight": "Por temporada",
+        "description": "Emoção do início ao fim"
+      },
+      {
+        "id": "official-league",
+        "icon": "shield",
+        "title": "Liga Oficial",
+        "highlight": "Federação Internacional",
+        "description": "De hóquei no gelo"
+      }
+    ]
+  },
+  "components": {
+    "card": {
+      "background": "linear-gradient(180deg, rgba(4, 28, 54, 0.94) 0%, rgba(2, 13, 28, 0.96) 100%)",
+      "border": "1px solid rgba(0, 183, 255, 0.55)",
+      "borderRadius": "12px",
+      "boxShadow": "0 0 22px rgba(0, 140, 255, 0.28)",
+      "padding": "16px",
+      "backdropFilter": "blur(14px)"
+    },
+    "buttonPrimary": {
+      "background": "linear-gradient(135deg, #00AFFF 0%, #005BFF 100%)",
+      "color": "#FFFFFF",
+      "border": "1px solid rgba(255,255,255,0.28)",
+      "borderRadius": "8px",
+      "padding": "10px 18px",
+      "fontFamily": "'Oswald', 'Roboto Condensed', sans-serif",
+      "fontWeight": 800,
+      "fontStyle": "italic",
+      "textTransform": "uppercase",
+      "boxShadow": "0 0 18px rgba(0, 123, 255, 0.42)"
+    },
+    "buttonGhost": {
+      "background": "rgba(0, 183, 255, 0.08)",
+      "color": "#00B7FF",
+      "border": "1px solid rgba(0, 183, 255, 0.42)",
+      "borderRadius": "8px",
+      "padding": "8px 14px",
+      "fontWeight": 700,
+      "textTransform": "uppercase"
+    },
+    "sectionHeader": {
+      "display": "flex",
+      "alignItems": "center",
+      "justifyContent": "space-between",
+      "marginBottom": "12px"
+    },
+    "table": {
+      "rowHeight": "34px",
+      "borderColor": "rgba(111, 178, 227, 0.18)",
+      "headerColor": "#7194B7",
+      "bodyColor": "#F4FAFF",
+      "rankColors": {
+        "1": "#FFD84A",
+        "2": "#C9D6E6",
+        "3": "#D18945",
+        "default": "#B8D4EF"
+      }
+    },
+    "newsCard": {
+      "imageHeight": "135px",
+      "categoryBadge": {
+        "background": "linear-gradient(135deg, #00AFFF 0%, #005BFF 100%)",
+        "color": "#FFFFFF",
+        "fontSize": "0.65rem",
+        "textTransform": "uppercase"
+      }
+    },
+    "videoCard": {
+      "playButton": {
+        "size": "54px",
+        "background": "rgba(0, 0, 0, 0.45)",
+        "border": "2px solid rgba(255,255,255,0.9)",
+        "iconColor": "#FFFFFF"
+      }
+    }
+  },
+  "animations": {
+    "pageEntrance": {
+      "type": "fade-up",
+      "durationMs": 650,
+      "easing": "ease-out"
+    },
+    "cardHover": {
+      "transform": "translateY(-4px)",
+      "boxShadow": "0 0 32px rgba(0, 183, 255, 0.48)",
+      "transition": "all 220ms ease"
+    },
+    "buttonHover": {
+      "transform": "translateY(-2px) scale(1.02)",
+      "filter": "brightness(1.12)",
+      "transition": "all 180ms ease"
+    },
+    "heroPlayerFloat": {
+      "enabled": true,
+      "animationName": "subtleIceFloat",
+      "duration": "5s",
+      "iterationCount": "infinite",
+      "direction": "alternate",
+      "transformRange": "translateY(-8px) translateX(4px)"
+    },
+    "backgroundParticles": {
+      "enabled": true,
+      "type": "ice-sparks",
+      "color": "rgba(0, 183, 255, 0.48)",
+      "density": "medium",
+      "speed": "slow"
+    }
+  },
+  "accessibility": {
+    "contrastTarget": "WCAG AA",
+    "useSemanticSections": true,
+    "keyboardNavigation": true,
+    "focusStyle": {
+      "outline": "2px solid #00B7FF",
+      "outlineOffset": "3px"
+    },
+    "imageAltRequired": true,
+    "ariaLabels": {
+      "liveButton": "Acompanhar transmissão ao vivo",
+      "searchButton": "Pesquisar no site",
+      "notificationsButton": "Abrir notificações",
+      "profileButton": "Abrir perfil",
+      "playHighlightVideo": "Assistir vídeo de destaque"
+    }
+  },
+  "responsiveBehavior": {
+    "desktop": {
+      "header": "horizontal navigation",
+      "hero": "text left, player right, highlight card right",
+      "dashboard": "four cards in one row",
+      "newsCalendar": "news wide left, calendar right",
+      "bottomHighlights": "four columns"
+    },
+    "tablet": {
+      "header": "condensed navigation",
+      "hero": "text left, player partially visible right",
+      "dashboard": "two columns",
+      "newsCalendar": "single column or two balanced columns",
+      "bottomHighlights": "two columns"
+    },
+    "mobile": {
+      "header": "hamburger menu recommended",
+      "hero": "text top, player below or as background accent",
+      "dashboard": "single column stacked cards",
+      "newsCalendar": "single column",
+      "bottomHighlights": "single column"
+    }
+  }
+}

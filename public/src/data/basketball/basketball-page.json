@@ -1,0 +1,1085 @@
+{
+  "page": {
+    "id": "powersport-basketball-home",
+    "name": "PowerSport - Basquete",
+    "type": "sports-dashboard-landing-page",
+    "language": "pt-BR",
+    "theme": "dark-fire-orange",
+    "sport": "basketball",
+    "description": "Página esportiva de basquete com hero principal, jogo em destaque, jogos da semana, classificação, destaques, top jogadores, notícias, estatísticas, artilheiros e atalhos inferiores.",
+    "apiConnected": true,
+    "recommendedFileName": "basketball-page.json"
+  },
+  "brand": {
+    "name": "PowerSport",
+    "logoText": {
+      "main": "Power",
+      "highlight": "Sport"
+    },
+    "logoStyle": {
+      "mainColor": "#FFFFFF",
+      "highlightColor": "#FF5A00",
+      "fontWeight": 900,
+      "fontStyle": "italic",
+      "letterSpacing": "-0.04em",
+      "textTransform": "uppercase"
+    },
+    "slogan": "Cada arremesso pode ser histórico."
+  },
+  "assets": {
+    "basePath": "./assets/",
+    "images": {
+      "referenceMockup": {
+        "fileName": "ChatGPT Image 24 de abr. de 2026, 10_49_42.png",
+        "role": "visual-reference",
+        "usage": "Imagem de referência geral da página completa. Não precisa ser usada diretamente no layout final.",
+        "recommendedAlt": "Mockup completo da página PowerSport de basquete"
+      },
+      "heroBackground": {
+        "fileName": "FundoBasquete.png",
+        "role": "hero-background",
+        "usage": "Imagem principal de fundo da seção hero com arena, luzes intensas, partículas laranja e atmosfera esportiva.",
+        "recommendedAlt": "Fundo cinematográfico de arena de basquete com luzes laranja e arquibancada",
+        "recommendedSection": "hero",
+        "css": {
+          "objectFit": "cover",
+          "objectPosition": "center center",
+          "overlay": "linear-gradient(90deg, rgba(0,0,0,0.98) 0%, rgba(8,3,0,0.82) 38%, rgba(15,6,0,0.38) 68%, rgba(0,0,0,0.9) 100%)"
+        }
+      },
+      "heroPlayer": {
+        "fileName": "JogadorBasquete.png",
+        "role": "hero-foreground-player",
+        "usage": "Imagem recortada do atleta em primeiro plano na seção hero.",
+        "recommendedAlt": "Atleta de basquete conduzindo a bola em uniforme escuro",
+        "recommendedSection": "hero",
+        "css": {
+          "position": "absolute",
+          "right": "23%",
+          "bottom": "-3%",
+          "widthDesktop": "40vw",
+          "maxWidth": "620px",
+          "minWidth": "360px",
+          "zIndex": 3,
+          "filter": "drop-shadow(0 0 32px rgba(255, 90, 0, 0.55))"
+        }
+      },
+      "feedActionPlayer": {
+        "fileName": "FeedBasquete-2.png",
+        "role": "news-card-image",
+        "usage": "Imagem para notícia sobre vitória, atleta em destaque ou liderança da liga.",
+        "recommendedAlt": "Atleta de basquete em arena iluminada com tons laranja",
+        "recommendedSection": "featuredNews",
+        "recommendedNewsId": "news-001",
+        "css": {
+          "objectFit": "cover",
+          "objectPosition": "center center"
+        }
+      },
+      "feedTeamHuddle": {
+        "fileName": "FeedBasquete-3.png",
+        "role": "news-card-image",
+        "usage": "Imagem para notícia sobre preparação de equipe, bastidores ou decisão importante.",
+        "recommendedAlt": "Equipe de basquete reunida em quadra com iluminação laranja",
+        "recommendedSection": "featuredNews",
+        "recommendedNewsId": "news-003",
+        "css": {
+          "objectFit": "cover",
+          "objectPosition": "center center"
+        }
+      },
+      "feedDunkHighlight": {
+        "fileName": "FeedBasquete-1.png",
+        "role": "highlight-video-image",
+        "usage": "Imagem para destaque da semana, melhores jogadas ou enterrada espetacular.",
+        "recommendedAlt": "Atleta de basquete executando jogada próxima à cesta",
+        "recommendedSection": "weeklyHighlight",
+        "recommendedNewsId": "highlight-001",
+        "css": {
+          "objectFit": "cover",
+          "objectPosition": "center center"
+        }
+      }
+    }
+  },
+  "theme": {
+    "colors": {
+      "backgroundPrimary": "#050201",
+      "backgroundSecondary": "#100500",
+      "backgroundTertiary": "#1A0800",
+      "surfacePrimary": "rgba(13, 5, 1, 0.88)",
+      "surfaceSecondary": "rgba(35, 10, 0, 0.78)",
+      "surfaceCard": "rgba(12, 5, 1, 0.92)",
+      "surfaceGlass": "rgba(35, 10, 0, 0.58)",
+      "borderPrimary": "#FF5A00",
+      "borderSecondary": "rgba(255, 90, 0, 0.58)",
+      "borderMuted": "rgba(255, 140, 60, 0.18)",
+      "textPrimary": "#FFFFFF",
+      "textSecondary": "#FFD5B5",
+      "textMuted": "#A9785D",
+      "textDark": "#130500",
+      "accentPrimary": "#FF5A00",
+      "accentSecondary": "#FF7A00",
+      "accentTertiary": "#FF2F00",
+      "accentGlow": "rgba(255, 90, 0, 0.62)",
+      "success": "#3CF29A",
+      "warning": "#FFD047",
+      "danger": "#FF344E",
+      "rankGold": "#FFD447",
+      "rankSilver": "#D7D7D7",
+      "rankBronze": "#C36B2A",
+      "white": "#FFFFFF",
+      "black": "#000000"
+    },
+    "gradients": {
+      "bodyBackground": "radial-gradient(circle at 50% 0%, rgba(255, 90, 0, 0.24) 0%, rgba(8, 3, 0, 1) 42%, rgba(0, 0, 0, 1) 100%)",
+      "heroOverlay": "linear-gradient(90deg, rgba(0,0,0,0.98) 0%, rgba(9,3,0,0.82) 36%, rgba(20,7,0,0.34) 67%, rgba(0,0,0,0.92) 100%)",
+      "cardBackground": "linear-gradient(180deg, rgba(24, 8, 0, 0.96) 0%, rgba(7, 3, 1, 0.98) 100%)",
+      "buttonPrimary": "linear-gradient(135deg, #FF7A00 0%, #FF2F00 100%)",
+      "buttonSecondary": "linear-gradient(135deg, rgba(255, 90, 0, 0.24) 0%, rgba(120, 30, 0, 0.5) 100%)",
+      "bottomStats": "linear-gradient(90deg, rgba(13, 5, 1, 0.96) 0%, rgba(38, 10, 0, 0.86) 100%)"
+    },
+    "effects": {
+      "glassBlur": "blur(14px)",
+      "cardShadow": "0 0 22px rgba(255, 90, 0, 0.28)",
+      "cardHoverShadow": "0 0 34px rgba(255, 90, 0, 0.52)",
+      "textGlow": "0 0 16px rgba(255, 90, 0, 0.62)",
+      "imageDarkOverlay": "rgba(0, 0, 0, 0.42)",
+      "dividerGlow": "linear-gradient(90deg, transparent, rgba(255, 90, 0, 0.9), transparent)"
+    },
+    "borderRadius": {
+      "xs": "4px",
+      "sm": "8px",
+      "md": "12px",
+      "lg": "18px",
+      "xl": "28px",
+      "full": "999px"
+    },
+    "spacing": {
+      "pagePaddingDesktop": "32px",
+      "pagePaddingTablet": "22px",
+      "pagePaddingMobile": "16px",
+      "sectionGap": "18px",
+      "cardPadding": "16px",
+      "cardPaddingCompact": "12px"
+    }
+  },
+  "typography": {
+    "fontFamilies": {
+      "display": "'Bebas Neue', 'Oswald', 'Impact', sans-serif",
+      "heading": "'Oswald', 'Roboto Condensed', sans-serif",
+      "body": "'Inter', 'Roboto', Arial, sans-serif",
+      "numbers": "'Rajdhani', 'Roboto Condensed', sans-serif"
+    },
+    "styles": {
+      "heroTitle": {
+        "fontFamily": "display",
+        "fontSizeDesktop": "clamp(4.7rem, 8vw, 8.6rem)",
+        "fontSizeMobile": "clamp(3.4rem, 15vw, 5.4rem)",
+        "fontWeight": 900,
+        "lineHeight": 0.88,
+        "letterSpacing": "-0.035em",
+        "textTransform": "uppercase",
+        "color": "#FFFFFF",
+        "textShadow": "0 0 24px rgba(255, 90, 0, 0.26)"
+      },
+      "heroSubtitle": {
+        "fontFamily": "heading",
+        "fontSizeDesktop": "2.05rem",
+        "fontSizeMobile": "1.45rem",
+        "fontWeight": 900,
+        "fontStyle": "italic",
+        "textTransform": "uppercase",
+        "color": "#FF5A00",
+        "lineHeight": 1.05
+      },
+      "sectionTitle": {
+        "fontFamily": "heading",
+        "fontSize": "1.15rem",
+        "fontWeight": 900,
+        "fontStyle": "italic",
+        "textTransform": "uppercase",
+        "color": "#FF5A00"
+      },
+      "bodyText": {
+        "fontFamily": "body",
+        "fontSize": "0.95rem",
+        "fontWeight": 400,
+        "lineHeight": 1.5,
+        "color": "#FFD5B5"
+      },
+      "smallLabel": {
+        "fontFamily": "heading",
+        "fontSize": "0.72rem",
+        "fontWeight": 700,
+        "textTransform": "uppercase",
+        "color": "#A9785D"
+      },
+      "statNumber": {
+        "fontFamily": "numbers",
+        "fontSize": "1.55rem",
+        "fontWeight": 900,
+        "color": "#FFFFFF"
+      }
+    }
+  },
+  "layout": {
+    "viewport": {
+      "maxWidth": "1920px",
+      "minHeight": "100vh"
+    },
+    "structure": [
+      "header",
+      "hero",
+      "mainDashboardGrid",
+      "secondaryDashboardGrid",
+      "bottomShortcuts"
+    ],
+    "grid": {
+      "desktop": {
+        "columns": 12,
+        "gap": "18px",
+        "areas": {
+          "weeklyGames": "span 3",
+          "standings": "span 3",
+          "weeklyHighlight": "span 3",
+          "topPlayers": "span 3",
+          "featuredNews": "span 5",
+          "leagueStats": "span 4",
+          "topScorers": "span 3"
+        }
+      },
+      "tablet": {
+        "columns": 6,
+        "gap": "16px",
+        "areas": {
+          "weeklyGames": "span 3",
+          "standings": "span 3",
+          "weeklyHighlight": "span 3",
+          "topPlayers": "span 3",
+          "featuredNews": "span 6",
+          "leagueStats": "span 3",
+          "topScorers": "span 3"
+        }
+      },
+      "mobile": {
+        "columns": 1,
+        "gap": "14px",
+        "areas": {
+          "all": "span 1"
+        }
+      }
+    },
+    "breakpoints": {
+      "mobile": "0px",
+      "tablet": "768px",
+      "desktop": "1200px",
+      "wide": "1440px"
+    }
+  },
+  "api": {
+    "enabled": true,
+    "baseUrl": "/api",
+    "timeoutMs": 12000,
+    "fallbackToStaticData": true,
+    "endpoints": {
+      "teams": {
+        "method": "GET",
+        "path": "/teams?league=basketball",
+        "bindTo": "data.teams"
+      },
+      "weeklyGames": {
+        "method": "GET",
+        "path": "/basketball/games/week",
+        "bindTo": "data.weeklyGames"
+      },
+      "nextGame": {
+        "method": "GET",
+        "path": "/basketball/games/next",
+        "bindTo": "data.nextGame"
+      },
+      "standings": {
+        "method": "GET",
+        "path": "/basketball/standings",
+        "bindTo": "data.standings"
+      },
+      "weeklyHighlight": {
+        "method": "GET",
+        "path": "/basketball/highlights/week",
+        "bindTo": "data.weeklyHighlight"
+      },
+      "topPlayers": {
+        "method": "GET",
+        "path": "/basketball/players/top",
+        "bindTo": "data.topPlayers"
+      },
+      "news": {
+        "method": "GET",
+        "path": "/basketball/news",
+        "bindTo": "data.featuredNews"
+      },
+      "leagueStats": {
+        "method": "GET",
+        "path": "/basketball/league/stats",
+        "bindTo": "data.leagueStats"
+      },
+      "topScorers": {
+        "method": "GET",
+        "path": "/basketball/players/scorers",
+        "bindTo": "data.topScorers"
+      },
+      "shortcuts": {
+        "method": "GET",
+        "path": "/basketball/shortcuts",
+        "bindTo": "data.bottomShortcuts"
+      }
+    },
+    "expectedResponseShape": {
+      "teams": "Array<{ id, name, shortName, logo, primaryColor, secondaryColor }>",
+      "weeklyGames": "Array<{ id, date, time, homeTeamId, awayTeamId, status }>",
+      "nextGame": "{ id, date, time, league, homeTeamId, awayTeamId, homeLogo, awayLogo, status }",
+      "standings": "Array<{ position, teamId, games, wins, losses, points }>",
+      "weeklyHighlight": "{ id, category, title, description, thumbnail, videoUrl }",
+      "topPlayers": "Array<{ position, playerName, teamId, mainValue, metric, avatar }>",
+      "news": "Array<{ id, category, title, date, image, url }>",
+      "leagueStats": "Array<{ id, label, value, unit, description, icon }>",
+      "topScorers": "Array<{ position, playerName, teamId, value, unit, avatar }>",
+      "shortcuts": "Array<{ id, icon, title, description, href }>"
+    }
+  },
+  "navigation": {
+    "activeItem": "inicio",
+    "items": [
+      {
+        "id": "inicio",
+        "label": "Início",
+        "href": "#inicio"
+      },
+      {
+        "id": "jogos",
+        "label": "Jogos",
+        "href": "#jogos"
+      },
+      {
+        "id": "noticias",
+        "label": "Notícias",
+        "href": "#noticias"
+      },
+      {
+        "id": "classificacao",
+        "label": "Classificação",
+        "href": "#classificacao"
+      },
+      {
+        "id": "atletas",
+        "label": "Atletas",
+        "href": "#atletas"
+      },
+      {
+        "id": "videos",
+        "label": "Vídeos",
+        "href": "#videos"
+      },
+      {
+        "id": "contato",
+        "label": "Contato",
+        "href": "#contato"
+      }
+    ],
+    "actions": [
+      {
+        "id": "search",
+        "type": "icon-button",
+        "icon": "search",
+        "ariaLabel": "Pesquisar"
+      },
+      {
+        "id": "notifications",
+        "type": "icon-button",
+        "icon": "bell",
+        "ariaLabel": "Notificações"
+      },
+      {
+        "id": "profile",
+        "type": "icon-button",
+        "icon": "user",
+        "ariaLabel": "Perfil"
+      },
+      {
+        "id": "live",
+        "type": "primary-button",
+        "label": "Ao Vivo",
+        "icon": "broadcast",
+        "href": "#ao-vivo"
+      }
+    ]
+  },
+  "sections": {
+    "header": {
+      "id": "site-header",
+      "position": "fixed",
+      "height": "72px",
+      "zIndex": 20,
+      "background": "linear-gradient(180deg, rgba(0,0,0,0.94) 0%, rgba(0,0,0,0.42) 100%)",
+      "backdropFilter": "blur(16px)",
+      "borderBottom": "1px solid rgba(255, 90, 0, 0.14)"
+    },
+    "hero": {
+      "id": "inicio",
+      "heightDesktop": "540px",
+      "heightMobile": "760px",
+      "backgroundImage": "FundoBasquete.png",
+      "foregroundImage": "JogadorBasquete.png",
+      "content": {
+        "eyebrow": "",
+        "title": "Basquete",
+        "subtitle": "Cada arremesso pode ser histórico.",
+        "description": "Trabalho em equipe. Foco. Determinação. Vitória é para quem nunca desiste.",
+        "primaryButton": {
+          "label": "Acompanhar ao vivo",
+          "icon": "broadcast",
+          "href": "#ao-vivo"
+        }
+      },
+      "visualRules": {
+        "keepPlayerOnRightDesktop": true,
+        "textColumnWidth": "42%",
+        "avoidTextOverPlayer": true,
+        "applyDarkGradientBehindText": true,
+        "useOrangeParticles": true
+      }
+    },
+    "nextGame": {
+      "id": "proximo-jogo",
+      "title": "Próximo Jogo",
+      "type": "match-versus-card",
+      "position": "hero-right",
+      "dataSource": "api.endpoints.nextGame",
+      "fallbackDataId": "next-game-001",
+      "content": {
+        "date": "25 MAI",
+        "time": "20:00",
+        "league": "Liga Nacional",
+        "homeTeamId": "tigers",
+        "awayTeamId": "warriors",
+        "buttonLabel": "Ver detalhes"
+      }
+    },
+    "weeklyGames": {
+      "id": "jogos-da-semana",
+      "title": "Jogos da Semana",
+      "type": "match-list-card",
+      "dataSource": "api.endpoints.weeklyGames",
+      "maxItems": 4,
+      "action": {
+        "label": "Ver todos",
+        "href": "#jogos"
+      }
+    },
+    "standings": {
+      "id": "classificacao",
+      "title": "Classificação",
+      "type": "standings-table-card",
+      "dataSource": "api.endpoints.standings",
+      "columns": [
+        "Pos",
+        "Time",
+        "J",
+        "V",
+        "D",
+        "PTS"
+      ],
+      "maxItems": 8,
+      "action": {
+        "label": "Ver tabela completa",
+        "href": "#classificacao"
+      }
+    },
+    "weeklyHighlight": {
+      "id": "destaques-da-semana",
+      "title": "Destaques da Semana",
+      "type": "video-highlight-card",
+      "dataSource": "api.endpoints.weeklyHighlight",
+      "fallbackDataId": "highlight-001",
+      "image": "FeedBasquete-1.png",
+      "content": {
+        "title": "Enterrada Espetacular!",
+        "description": "A jogada que parou a partida!",
+        "buttonLabel": "Assistir agora"
+      },
+      "action": {
+        "label": "Ver todos",
+        "href": "#videos"
+      }
+    },
+    "topPlayers": {
+      "id": "top-jogadores",
+      "title": "Top Jogadores",
+      "type": "podium-card",
+      "dataSource": "api.endpoints.topPlayers",
+      "maxItems": 3,
+      "action": {
+        "label": "Ver ranking",
+        "href": "#atletas"
+      }
+    },
+    "featuredNews": {
+      "id": "noticias",
+      "title": "Notícias em Destaque",
+      "type": "news-grid-card",
+      "dataSource": "api.endpoints.news",
+      "maxItems": 3,
+      "action": {
+        "label": "Ver todas",
+        "href": "#noticias"
+      }
+    },
+    "leagueStats": {
+      "id": "estatisticas-da-liga",
+      "title": "Estatísticas da Liga",
+      "type": "stats-grid-card",
+      "dataSource": "api.endpoints.leagueStats",
+      "maxItems": 4,
+      "action": {
+        "label": "Ver todas",
+        "href": "#estatisticas"
+      }
+    },
+    "topScorers": {
+      "id": "artilheiros",
+      "title": "Artilheiros",
+      "type": "scorers-ranking-card",
+      "dataSource": "api.endpoints.topScorers",
+      "maxItems": 5,
+      "action": {
+        "label": "Ver ranking",
+        "href": "#artilheiros"
+      }
+    },
+    "bottomShortcuts": {
+      "id": "atalhos-inferiores",
+      "type": "horizontal-feature-strip",
+      "itemsPerRowDesktop": 4,
+      "itemsPerRowMobile": 1
+    }
+  },
+  "data": {
+    "teams": [
+      {
+        "id": "hawks",
+        "name": "Hawks",
+        "shortName": "HAW",
+        "logo": "team-hawks.svg",
+        "primaryColor": "#D71920",
+        "secondaryColor": "#FFFFFF"
+      },
+      {
+        "id": "tigers",
+        "name": "Tigers",
+        "shortName": "TIG",
+        "logo": "team-tigers.svg",
+        "primaryColor": "#FF6A00",
+        "secondaryColor": "#111111"
+      },
+      {
+        "id": "warriors",
+        "name": "Warriors",
+        "shortName": "WAR",
+        "logo": "team-warriors.svg",
+        "primaryColor": "#D9D9D9",
+        "secondaryColor": "#111111"
+      },
+      {
+        "id": "kings",
+        "name": "Kings",
+        "shortName": "KIN",
+        "logo": "team-kings.svg",
+        "primaryColor": "#255CFF",
+        "secondaryColor": "#FFFFFF"
+      },
+      {
+        "id": "eagles",
+        "name": "Eagles",
+        "shortName": "EAG",
+        "logo": "team-eagles.svg",
+        "primaryColor": "#FFFFFF",
+        "secondaryColor": "#111111"
+      },
+      {
+        "id": "dragons",
+        "name": "Dragons",
+        "shortName": "DRA",
+        "logo": "team-dragons.svg",
+        "primaryColor": "#005CFF",
+        "secondaryColor": "#FF5A00"
+      },
+      {
+        "id": "panthers",
+        "name": "Panthers",
+        "shortName": "PAN",
+        "logo": "team-panthers.svg",
+        "primaryColor": "#111111",
+        "secondaryColor": "#FF5A00"
+      },
+      {
+        "id": "bulls",
+        "name": "Bulls",
+        "shortName": "BUL",
+        "logo": "team-bulls.svg",
+        "primaryColor": "#D71920",
+        "secondaryColor": "#FFFFFF"
+      }
+    ],
+    "nextGame": {
+      "id": "next-game-001",
+      "date": "25 MAI",
+      "time": "20:00",
+      "league": "Liga Nacional",
+      "homeTeamId": "tigers",
+      "awayTeamId": "warriors",
+      "status": "scheduled",
+      "buttonLabel": "Ver detalhes"
+    },
+    "weeklyGames": [
+      {
+        "id": "game-week-001",
+        "date": "24 MAI",
+        "time": "18:00",
+        "homeTeamId": "hawks",
+        "awayTeamId": "bulls",
+        "status": "scheduled"
+      },
+      {
+        "id": "game-week-002",
+        "date": "25 MAI",
+        "time": "20:00",
+        "homeTeamId": "tigers",
+        "awayTeamId": "warriors",
+        "status": "scheduled"
+      },
+      {
+        "id": "game-week-003",
+        "date": "26 MAI",
+        "time": "19:30",
+        "homeTeamId": "kings",
+        "awayTeamId": "eagles",
+        "status": "scheduled"
+      },
+      {
+        "id": "game-week-004",
+        "date": "27 MAI",
+        "time": "21:00",
+        "homeTeamId": "dragons",
+        "awayTeamId": "panthers",
+        "status": "scheduled"
+      }
+    ],
+    "standings": [
+      {
+        "position": 1,
+        "teamId": "tigers",
+        "games": 28,
+        "wins": 22,
+        "losses": 6,
+        "points": 50
+      },
+      {
+        "position": 2,
+        "teamId": "warriors",
+        "games": 28,
+        "wins": 20,
+        "losses": 8,
+        "points": 48
+      },
+      {
+        "position": 3,
+        "teamId": "kings",
+        "games": 28,
+        "wins": 18,
+        "losses": 10,
+        "points": 46
+      },
+      {
+        "position": 4,
+        "teamId": "eagles",
+        "games": 28,
+        "wins": 16,
+        "losses": 12,
+        "points": 44
+      },
+      {
+        "position": 5,
+        "teamId": "hawks",
+        "games": 28,
+        "wins": 14,
+        "losses": 14,
+        "points": 42
+      },
+      {
+        "position": 6,
+        "teamId": "bulls",
+        "games": 28,
+        "wins": 12,
+        "losses": 16,
+        "points": 40
+      },
+      {
+        "position": 7,
+        "teamId": "panthers",
+        "games": 28,
+        "wins": 10,
+        "losses": 18,
+        "points": 38
+      },
+      {
+        "position": 8,
+        "teamId": "dragons",
+        "games": 28,
+        "wins": 8,
+        "losses": 20,
+        "points": 36
+      }
+    ],
+    "weeklyHighlight": {
+      "id": "highlight-001",
+      "category": "Destaque",
+      "title": "Enterrada Espetacular!",
+      "description": "A jogada que parou a partida!",
+      "thumbnail": "FeedBasquete-1.png",
+      "videoUrl": "https://www.youtube.com/watch?v=VZaB9c745FM",
+      "buttonLabel": "Assistir agora"
+    },
+    "topPlayers": [
+      {
+        "position": 1,
+        "playerName": "L. Anderson",
+        "teamId": "tigers",
+        "mainValue": "24.8",
+        "metric": "PTS",
+        "avatar": "player-l-anderson.png"
+      },
+      {
+        "position": 2,
+        "playerName": "J. Williams",
+        "teamId": "warriors",
+        "mainValue": "7.6",
+        "metric": "REB",
+        "avatar": "player-j-williams.png"
+      },
+      {
+        "position": 3,
+        "playerName": "M. Brown",
+        "teamId": "kings",
+        "mainValue": "5.9",
+        "metric": "AST",
+        "avatar": "player-m-brown.png"
+      }
+    ],
+    "featuredNews": [
+      {
+        "id": "news-001",
+        "category": "Liga",
+        "title": "Tigers vence mais uma e segue líder da liga",
+        "date": "23 MAI 2024",
+        "image": "FeedBasquete-2.png",
+        "url": "#noticia-001"
+      },
+      {
+        "id": "news-002",
+        "category": "Promessa",
+        "title": "Jovem promessa faz estreia incrível",
+        "date": "22 MAI 2024",
+        "image": "FeedBasquete-1.png",
+        "url": "#noticia-002"
+      },
+      {
+        "id": "news-003",
+        "category": "Equipe",
+        "title": "Warriors se prepara para decisão importante",
+        "date": "21 MAI 2024",
+        "image": "FeedBasquete-3.png",
+        "url": "#noticia-003"
+      }
+    ],
+    "leagueStats": [
+      {
+        "id": "points-per-game",
+        "label": "Pontos por jogo",
+        "value": "98.7",
+        "unit": "",
+        "description": "Média",
+        "icon": "basket"
+      },
+      {
+        "id": "rebounds-per-game",
+        "label": "Rebotes por jogo",
+        "value": "42.3",
+        "unit": "",
+        "description": "Média",
+        "icon": "basketball"
+      },
+      {
+        "id": "assists-per-game",
+        "label": "Assistências por jogo",
+        "value": "24.8",
+        "unit": "",
+        "description": "Média",
+        "icon": "court"
+      },
+      {
+        "id": "field-goal-percentage",
+        "label": "Aproveitamento",
+        "value": "48.6",
+        "unit": "%",
+        "description": "Média",
+        "icon": "target"
+      }
+    ],
+    "topScorers": [
+      {
+        "position": 1,
+        "playerName": "L. Anderson",
+        "teamId": "tigers",
+        "value": "24.8",
+        "unit": "PTS",
+        "avatar": "player-l-anderson.png"
+      },
+      {
+        "position": 2,
+        "playerName": "J. Williams",
+        "teamId": "warriors",
+        "value": "22.1",
+        "unit": "PTS",
+        "avatar": "player-j-williams.png"
+      },
+      {
+        "position": 3,
+        "playerName": "M. Brown",
+        "teamId": "kings",
+        "value": "19.7",
+        "unit": "PTS",
+        "avatar": "player-m-brown.png"
+      },
+      {
+        "position": 4,
+        "playerName": "D. Johnson",
+        "teamId": "eagles",
+        "value": "18.3",
+        "unit": "PTS",
+        "avatar": "player-d-johnson.png"
+      },
+      {
+        "position": 5,
+        "playerName": "R. Smith",
+        "teamId": "hawks",
+        "value": "16.9",
+        "unit": "PTS",
+        "avatar": "player-r-smith.png"
+      }
+    ],
+    "bottomShortcuts": [
+      {
+        "id": "full-calendar",
+        "icon": "calendar",
+        "title": "Calendário Completo",
+        "description": "Confira todos os jogos da temporada",
+        "href": "#calendario"
+      },
+      {
+        "id": "best-plays",
+        "icon": "play-circle",
+        "title": "Melhores Jogadas",
+        "description": "Assista aos melhores momentos",
+        "href": "#videos"
+      },
+      {
+        "id": "advanced-stats",
+        "icon": "bar-chart",
+        "title": "Estatísticas Avançadas",
+        "description": "Números que fazem a diferença",
+        "href": "#estatisticas"
+      },
+      {
+        "id": "history-records",
+        "icon": "trophy",
+        "title": "História e Recordes",
+        "description": "Conheça os maiores da liga",
+        "href": "#recordes"
+      }
+    ]
+  },
+  "components": {
+    "card": {
+      "background": "linear-gradient(180deg, rgba(24, 8, 0, 0.96) 0%, rgba(7, 3, 1, 0.98) 100%)",
+      "border": "1px solid rgba(255, 90, 0, 0.58)",
+      "borderRadius": "12px",
+      "boxShadow": "0 0 22px rgba(255, 90, 0, 0.28)",
+      "padding": "16px",
+      "backdropFilter": "blur(14px)"
+    },
+    "buttonPrimary": {
+      "background": "linear-gradient(135deg, #FF7A00 0%, #FF2F00 100%)",
+      "color": "#FFFFFF",
+      "border": "1px solid rgba(255,255,255,0.22)",
+      "borderRadius": "8px",
+      "padding": "10px 18px",
+      "fontFamily": "'Oswald', 'Roboto Condensed', sans-serif",
+      "fontWeight": 900,
+      "fontStyle": "italic",
+      "textTransform": "uppercase",
+      "boxShadow": "0 0 20px rgba(255, 90, 0, 0.46)"
+    },
+    "buttonGhost": {
+      "background": "rgba(255, 90, 0, 0.08)",
+      "color": "#FF5A00",
+      "border": "1px solid rgba(255, 90, 0, 0.42)",
+      "borderRadius": "8px",
+      "padding": "8px 14px",
+      "fontWeight": 800,
+      "textTransform": "uppercase"
+    },
+    "sectionHeader": {
+      "display": "flex",
+      "alignItems": "center",
+      "justifyContent": "space-between",
+      "marginBottom": "12px"
+    },
+    "table": {
+      "rowHeight": "32px",
+      "borderColor": "rgba(255, 140, 60, 0.18)",
+      "headerColor": "#A9785D",
+      "bodyColor": "#FFFFFF",
+      "rankColors": {
+        "1": "#FFD447",
+        "2": "#D7D7D7",
+        "3": "#C36B2A",
+        "default": "#FFD5B5"
+      }
+    },
+    "matchList": {
+      "versusColor": "#FF5A00",
+      "dateColor": "#FFD5B5",
+      "teamColor": "#FFFFFF",
+      "rowDivider": "1px solid rgba(255, 140, 60, 0.16)"
+    },
+    "versusCard": {
+      "teamLogoSize": "78px",
+      "versusText": {
+        "color": "#FF5A00",
+        "fontSize": "2rem",
+        "fontWeight": 900,
+        "fontStyle": "italic"
+      }
+    },
+    "podiumCard": {
+      "avatarSize": "92px",
+      "avatarBorder": "2px solid #FF5A00",
+      "rankColor": "#FFFFFF",
+      "metricColor": "#FF5A00",
+      "statColor": "#FF5A00"
+    },
+    "newsCard": {
+      "imageHeight": "135px",
+      "categoryBadge": {
+        "background": "linear-gradient(135deg, #FF7A00 0%, #FF2F00 100%)",
+        "color": "#FFFFFF",
+        "fontSize": "0.65rem",
+        "fontWeight": 800,
+        "textTransform": "uppercase"
+      }
+    },
+    "statsCard": {
+      "iconColor": "#FF5A00",
+      "valueColor": "#FFFFFF",
+      "labelColor": "#FFD5B5",
+      "descriptionColor": "#A9785D"
+    },
+    "videoCard": {
+      "playButton": {
+        "size": "56px",
+        "background": "rgba(0, 0, 0, 0.52)",
+        "border": "2px solid rgba(255,255,255,0.92)",
+        "iconColor": "#FFFFFF"
+      }
+    },
+    "bottomShortcut": {
+      "iconColor": "#FF5A00",
+      "titleColor": "#FFFFFF",
+      "descriptionColor": "#FFD5B5",
+      "borderTop": "1px solid rgba(255, 90, 0, 0.42)"
+    }
+  },
+  "animations": {
+    "pageEntrance": {
+      "type": "fade-up",
+      "durationMs": 650,
+      "easing": "ease-out"
+    },
+    "cardHover": {
+      "transform": "translateY(-4px)",
+      "boxShadow": "0 0 34px rgba(255, 90, 0, 0.52)",
+      "transition": "all 220ms ease"
+    },
+    "buttonHover": {
+      "transform": "translateY(-2px) scale(1.02)",
+      "filter": "brightness(1.12)",
+      "transition": "all 180ms ease"
+    },
+    "heroPlayerFloat": {
+      "enabled": true,
+      "animationName": "subtleCourtFloat",
+      "duration": "5s",
+      "iterationCount": "infinite",
+      "direction": "alternate",
+      "transformRange": "translateY(-8px) translateX(4px)"
+    },
+    "backgroundParticles": {
+      "enabled": true,
+      "type": "orange-sparks",
+      "color": "rgba(255, 90, 0, 0.56)",
+      "density": "medium",
+      "speed": "slow"
+    }
+  },
+  "accessibility": {
+    "contrastTarget": "WCAG AA",
+    "useSemanticSections": true,
+    "keyboardNavigation": true,
+    "focusStyle": {
+      "outline": "2px solid #FF5A00",
+      "outlineOffset": "3px"
+    },
+    "imageAltRequired": true,
+    "ariaLabels": {
+      "liveButton": "Acompanhar transmissão ao vivo",
+      "searchButton": "Pesquisar no site",
+      "notificationsButton": "Abrir notificações",
+      "profileButton": "Abrir perfil",
+      "nextGameDetails": "Ver detalhes do próximo jogo",
+      "playHighlightVideo": "Assistir vídeo de destaque da semana"
+    }
+  },
+  "responsiveBehavior": {
+    "desktop": {
+      "header": "horizontal navigation",
+      "hero": "text left, player center-right, next game card right",
+      "mainDashboardGrid": "four cards in one row",
+      "secondaryDashboardGrid": "news left, stats center, scorers right",
+      "bottomShortcuts": "four columns"
+    },
+    "tablet": {
+      "header": "condensed navigation",
+      "hero": "text left, player partially visible right, next game below or overlaid",
+      "mainDashboardGrid": "two columns",
+      "secondaryDashboardGrid": "two columns with news full width",
+      "bottomShortcuts": "two columns"
+    },
+    "mobile": {
+      "header": "hamburger menu recommended",
+      "hero": "text top, player below or background accent, next game below hero text",
+      "mainDashboardGrid": "single column stacked cards",
+      "secondaryDashboardGrid": "single column stacked cards",
+      "bottomShortcuts": "single column"
+    }
+  }
+}

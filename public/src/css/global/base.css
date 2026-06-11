@@ -1,0 +1,15 @@
+/* ==========================================================================
+   POWERSPORT - GLOBAL BASE STYLES (base.css)
+   ========================================================================== */
+
+body {
+  background: var(--black);
+  color: var(--white);
+  font-family: var(--font-body);
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}

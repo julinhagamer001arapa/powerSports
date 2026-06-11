@@ -1,0 +1,929 @@
+{
+  "page": {
+    "id": "powersport-american-football-home",
+    "name": "PowerSport - Futebol Americano",
+    "type": "sports-dashboard-landing-page",
+    "language": "pt-BR",
+    "theme": "dark-red-stadium",
+    "sport": "american-football",
+    "description": "Página esportiva de futebol americano com hero principal, próximo jogo, calendário de jogos, classificação, melhores jogadas, destaques dos jogadores, notícias em destaque, estatísticas da liga, artilheiros e atalhos inferiores.",
+    "apiConnected": true,
+    "recommendedFileName": "american-football-page.json"
+  },
+  "brand": {
+    "name": "PowerSport",
+    "logoText": {
+      "main": "Power",
+      "highlight": "Sport"
+    },
+    "logoStyle": {
+      "mainColor": "#FFFFFF",
+      "highlightColor": "#FF1E1E",
+      "fontWeight": 900,
+      "fontStyle": "italic",
+      "letterSpacing": "-0.04em",
+      "textTransform": "uppercase"
+    },
+    "slogan": "Força. Estratégia. Adrenalina."
+  },
+  "assets": {
+    "basePath": "./assets/",
+    "images": {
+      "referenceMockup": {
+        "fileName": "ChatGPT Image 30 de abr. de 2026, 08_46_11.png",
+        "role": "visual-reference",
+        "usage": "Imagem de referência geral da página completa. Usar apenas como base visual para recriar o layout.",
+        "recommendedAlt": "Mockup completo da página PowerSport de futebol americano"
+      },
+      "heroBackground": {
+        "fileName": "FundoFutebolAmericano.png",
+        "role": "hero-background",
+        "usage": "Imagem principal de fundo da seção hero, com estádio, campo, luzes vermelhas e explosão de energia ao centro.",
+        "recommendedAlt": "Estádio de futebol americano com campo iluminado, luzes vermelhas e partículas de impacto",
+        "recommendedSection": "hero",
+        "css": {
+          "objectFit": "cover",
+          "objectPosition": "center center",
+          "overlay": "linear-gradient(90deg, rgba(0,0,0,0.98) 0%, rgba(20,0,0,0.82) 34%, rgba(40,0,0,0.36) 66%, rgba(0,0,0,0.92) 100%)"
+        }
+      },
+      "heroPlayer": {
+        "fileName": "JogadorFutebolAmericano.png",
+        "role": "hero-foreground-player",
+        "uploadStatus": "not-uploaded-to-copilot-but-existing-in-project-files",
+        "usage": "Imagem recortada do jogador principal em primeiro plano na seção hero. O arquivo existe no projeto, mas não foi enviado ao Copilot.",
+        "recommendedAlt": "Jogador de futebol americano correndo com a bola em uniforme escuro e detalhes vermelhos",
+        "recommendedSection": "hero",
+        "css": {
+          "position": "absolute",
+          "right": "34%",
+          "bottom": "-2%",
+          "widthDesktop": "36vw",
+          "maxWidth": "610px",
+          "minWidth": "340px",
+          "zIndex": 3,
+          "filter": "drop-shadow(0 0 34px rgba(255, 0, 0, 0.58)) drop-shadow(0 0 18px rgba(255, 255, 255, 0.16))"
+        }
+      },
+      "feedTeamHuddle": {
+        "fileName": "FeedFutebolAmericano-2.png",
+        "role": "news-card-image",
+        "usage": "Imagem para notícia principal sobre liderança, preparação coletiva ou bastidores da equipe.",
+        "recommendedAlt": "Equipe de futebol americano reunida em campo com iluminação vermelha",
+        "recommendedSection": "featuredNews",
+        "recommendedNewsId": "news-001",
+        "css": {
+          "objectFit": "cover",
+          "objectPosition": "center center"
+        }
+      },
+      "feedQuarterback": {
+        "fileName": "FeedFutebolAmericano-3.png",
+        "role": "highlight-video-or-news-image",
+        "usage": "Imagem para notícia ou vídeo sobre quarterback, passe decisivo ou jogada de destaque.",
+        "recommendedAlt": "Jogador de futebol americano lançando a bola em estádio iluminado",
+        "recommendedSection": "bestPlays",
+        "recommendedNewsId": "news-002",
+        "css": {
+          "objectFit": "cover",
+          "objectPosition": "center center"
+        }
+      },
+      "feedStadium": {
+        "fileName": "FeedFutebolAmericano-1.png",
+        "role": "news-card-image",
+        "usage": "Imagem para notícia sobre estádio, rodada especial, evento ou jogo noturno.",
+        "recommendedAlt": "Campo de futebol americano em estádio iluminado com atmosfera noturna",
+        "recommendedSection": "featuredNews",
+        "recommendedNewsId": "news-003",
+        "css": {
+          "objectFit": "cover",
+          "objectPosition": "center center"
+        }
+      }
+    }
+  },
+  "theme": {
+    "colors": {
+      "backgroundPrimary": "#050000",
+      "backgroundSecondary": "#100101",
+      "backgroundTertiary": "#1A0202",
+      "surfacePrimary": "rgba(14, 1, 1, 0.9)",
+      "surfaceSecondary": "rgba(34, 2, 2, 0.78)",
+      "surfaceCard": "rgba(10, 1, 1, 0.94)",
+      "surfaceGlass": "rgba(38, 2, 2, 0.58)",
+      "borderPrimary": "#FF1E1E",
+      "borderSecondary": "rgba(255, 30, 30, 0.58)",
+      "borderMuted": "rgba(255, 95, 95, 0.18)",
+      "textPrimary": "#FFFFFF",
+      "textSecondary": "#FFD0D0",
+      "textMuted": "#A86A6A",
+      "textDark": "#160101",
+      "accentPrimary": "#FF1E1E",
+      "accentSecondary": "#FF3B3B",
+      "accentTertiary": "#B80000",
+      "accentGlow": "rgba(255, 30, 30, 0.64)",
+      "fieldGreen": "#1E7A34",
+      "success": "#32F29A",
+      "warning": "#FFD447",
+      "danger": "#FF1E1E",
+      "rankGold": "#FFD447",
+      "rankSilver": "#D7D7D7",
+      "rankBronze": "#C46A32",
+      "white": "#FFFFFF",
+      "black": "#000000"
+    },
+    "gradients": {
+      "bodyBackground": "radial-gradient(circle at 50% 0%, rgba(255, 30, 30, 0.24) 0%, rgba(10, 0, 0, 1) 42%, rgba(0, 0, 0, 1) 100%)",
+      "heroOverlay": "linear-gradient(90deg, rgba(0,0,0,0.98) 0%, rgba(18,0,0,0.84) 34%, rgba(45,0,0,0.34) 67%, rgba(0,0,0,0.92) 100%)",
+      "cardBackground": "linear-gradient(180deg, rgba(26, 2, 2, 0.96) 0%, rgba(7, 0, 0, 0.98) 100%)",
+      "buttonPrimary": "linear-gradient(135deg, #FF3B3B 0%, #B80000 100%)",
+      "buttonSecondary": "linear-gradient(135deg, rgba(255, 30, 30, 0.24) 0%, rgba(110, 0, 0, 0.52) 100%)",
+      "bottomStats": "linear-gradient(90deg, rgba(12, 1, 1, 0.96) 0%, rgba(36, 2, 2, 0.86) 100%)",
+      "fieldGlow": "linear-gradient(135deg, rgba(255, 30, 30, 0.75) 0%, rgba(30, 122, 52, 0.55) 100%)"
+    },
+    "effects": {
+      "glassBlur": "blur(14px)",
+      "cardShadow": "0 0 22px rgba(255, 30, 30, 0.3)",
+      "cardHoverShadow": "0 0 34px rgba(255, 30, 30, 0.55)",
+      "textGlow": "0 0 16px rgba(255, 30, 30, 0.62)",
+      "imageDarkOverlay": "rgba(0, 0, 0, 0.44)",
+      "dividerGlow": "linear-gradient(90deg, transparent, rgba(255, 30, 30, 0.9), transparent)"
+    },
+    "borderRadius": {
+      "xs": "4px",
+      "sm": "8px",
+      "md": "12px",
+      "lg": "18px",
+      "xl": "28px",
+      "full": "999px"
+    },
+    "spacing": {
+      "pagePaddingDesktop": "32px",
+      "pagePaddingTablet": "22px",
+      "pagePaddingMobile": "16px",
+      "sectionGap": "18px",
+      "cardPadding": "16px",
+      "cardPaddingCompact": "12px"
+    }
+  },
+  "typography": {
+    "fontFamilies": {
+      "display": "'Bebas Neue', 'Oswald', 'Impact', sans-serif",
+      "heading": "'Oswald', 'Roboto Condensed', sans-serif",
+      "body": "'Inter', 'Roboto', Arial, sans-serif",
+      "numbers": "'Rajdhani', 'Roboto Condensed', sans-serif"
+    },
+    "styles": {
+      "heroTitle": {
+        "fontFamily": "display",
+        "fontSizeDesktop": "clamp(4.5rem, 7.8vw, 8.5rem)",
+        "fontSizeMobile": "clamp(3.1rem, 14vw, 5.2rem)",
+        "fontWeight": 900,
+        "lineHeight": 0.88,
+        "letterSpacing": "-0.035em",
+        "textTransform": "uppercase",
+        "color": "#FFFFFF",
+        "textShadow": "0 0 24px rgba(255, 30, 30, 0.28)"
+      },
+      "heroSubtitle": {
+        "fontFamily": "heading",
+        "fontSizeDesktop": "1.95rem",
+        "fontSizeMobile": "1.4rem",
+        "fontWeight": 900,
+        "fontStyle": "italic",
+        "textTransform": "uppercase",
+        "color": "#FF1E1E",
+        "lineHeight": 1.05,
+        "textShadow": "0 0 16px rgba(255, 30, 30, 0.44)"
+      },
+      "sectionTitle": {
+        "fontFamily": "heading",
+        "fontSize": "1.15rem",
+        "fontWeight": 900,
+        "fontStyle": "italic",
+        "textTransform": "uppercase",
+        "color": "#FF1E1E"
+      },
+      "bodyText": {
+        "fontFamily": "body",
+        "fontSize": "0.95rem",
+        "fontWeight": 400,
+        "lineHeight": 1.5,
+        "color": "#FFD0D0"
+      },
+      "smallLabel": {
+        "fontFamily": "heading",
+        "fontSize": "0.72rem",
+        "fontWeight": 700,
+        "textTransform": "uppercase",
+        "color": "#A86A6A"
+      },
+      "statNumber": {
+        "fontFamily": "numbers",
+        "fontSize": "1.55rem",
+        "fontWeight": 900,
+        "color": "#FFFFFF"
+      },
+      "redMetric": {
+        "fontFamily": "numbers",
+        "fontSize": "1.55rem",
+        "fontWeight": 900,
+        "color": "#FF1E1E"
+      }
+    }
+  },
+  "layout": {
+    "viewport": {
+      "maxWidth": "1920px",
+      "minHeight": "100vh"
+    },
+    "structure": [
+      "header",
+      "hero",
+      "mainDashboardGrid",
+      "secondaryDashboardGrid",
+      "bottomShortcuts"
+    ],
+    "grid": {
+      "desktop": {
+        "columns": 12,
+        "gap": "18px",
+        "areas": {
+          "gameCalendar": "span 3",
+          "standings": "span 3",
+          "bestPlays": "span 3",
+          "playerHighlights": "span 3",
+          "featuredNews": "span 4",
+          "leagueStats": "span 4",
+          "topScorers": "span 4"
+        }
+      },
+      "tablet": {
+        "columns": 6,
+        "gap": "16px",
+        "areas": {
+          "gameCalendar": "span 3",
+          "standings": "span 3",
+          "bestPlays": "span 3",
+          "playerHighlights": "span 3",
+          "featuredNews": "span 6",
+          "leagueStats": "span 3",
+          "topScorers": "span 3"
+        }
+      },
+      "mobile": {
+        "columns": 1,
+        "gap": "14px",
+        "areas": {
+          "all": "span 1"
+        }
+      }
+    },
+    "breakpoints": {
+      "mobile": "0px",
+      "tablet": "768px",
+      "desktop": "1200px",
+      "wide": "1440px"
+    }
+  },
+  "api": {
+    "enabled": true,
+    "baseUrl": "/api",
+    "timeoutMs": 12000,
+    "fallbackToStaticData": true,
+    "endpoints": {
+      "teams": {
+        "method": "GET",
+        "path": "/teams?league=american-football",
+        "bindTo": "data.teams"
+      },
+      "nextGame": {
+        "method": "GET",
+        "path": "/american-football/games/next",
+        "bindTo": "data.nextGame"
+      },
+      "gameCalendar": {
+        "method": "GET",
+        "path": "/american-football/games/calendar",
+        "bindTo": "data.gameCalendar"
+      },
+      "standings": {
+        "method": "GET",
+        "path": "/american-football/standings",
+        "bindTo": "data.standings"
+      },
+      "bestPlays": {
+        "method": "GET",
+        "path": "/american-football/highlights/best-plays",
+        "bindTo": "data.bestPlays"
+      },
+      "playerHighlights": {
+        "method": "GET",
+        "path": "/american-football/players/highlights",
+        "bindTo": "data.playerHighlights"
+      },
+      "news": {
+        "method": "GET",
+        "path": "/american-football/news",
+        "bindTo": "data.featuredNews"
+      },
+      "leagueStats": {
+        "method": "GET",
+        "path": "/american-football/league/stats",
+        "bindTo": "data.leagueStats"
+      },
+      "topScorers": {
+        "method": "GET",
+        "path": "/american-football/players/scorers",
+        "bindTo": "data.topScorers"
+      },
+      "shortcuts": {
+        "method": "GET",
+        "path": "/american-football/shortcuts",
+        "bindTo": "data.bottomShortcuts"
+      }
+    },
+    "expectedResponseShape": {
+      "teams": "Array<{ id, name, shortName, logo, primaryColor, secondaryColor }>",
+      "nextGame": "{ id, date, time, stadium, homeTeamId, awayTeamId, status }",
+      "gameCalendar": "Array<{ id, date, time, homeTeamId, awayTeamId, status }>",
+      "standings": "Array<{ position, conference, teamId, games, wins, losses, percentage, points }>",
+      "bestPlays": "{ id, title, description, thumbnail, videoUrl }",
+      "playerHighlights": "Array<{ position, playerName, teamId, value, metric, avatar }>",
+      "news": "Array<{ id, title, date, image, url }>",
+      "leagueStats": "Array<{ id, label, value, unit, description, icon }>",
+      "topScorers": "Array<{ position, playerName, teamId, value, unit, avatar }>",
+      "shortcuts": "Array<{ id, icon, title, description, href }>"
+    }
+  },
+  "navigation": {
+    "activeItem": "inicio",
+    "items": [
+      {
+        "id": "inicio",
+        "label": "Início",
+        "href": "#inicio"
+      },
+      {
+        "id": "jogos",
+        "label": "Jogos",
+        "href": "#jogos"
+      },
+      {
+        "id": "noticias",
+        "label": "Notícias",
+        "href": "#noticias"
+      },
+      {
+        "id": "classificacao",
+        "label": "Classificação",
+        "href": "#classificacao"
+      },
+      {
+        "id": "atletas",
+        "label": "Atletas",
+        "href": "#atletas"
+      },
+      {
+        "id": "videos",
+        "label": "Vídeos",
+        "href": "#videos"
+      },
+      {
+        "id": "estatisticas",
+        "label": "Estatísticas",
+        "href": "#estatisticas"
+      },
+      {
+        "id": "contato",
+        "label": "Contato",
+        "href": "#contato"
+      }
+    ],
+    "actions": [
+      {
+        "id": "search",
+        "type": "icon-button",
+        "icon": "search",
+        "ariaLabel": "Pesquisar"
+      },
+      {
+        "id": "notifications",
+        "type": "icon-button",
+        "icon": "bell",
+        "ariaLabel": "Notificações"
+      },
+      {
+        "id": "profile",
+        "type": "icon-button",
+        "icon": "user",
+        "ariaLabel": "Perfil"
+      },
+      {
+        "id": "live",
+        "type": "primary-button",
+        "label": "Ao Vivo",
+        "icon": "broadcast",
+        "href": "#ao-vivo"
+      }
+    ]
+  },
+  "sections": {
+    "header": {
+      "id": "site-header",
+      "position": "fixed",
+      "height": "72px",
+      "zIndex": 20,
+      "background": "linear-gradient(180deg, rgba(0,0,0,0.94) 0%, rgba(0,0,0,0.42) 100%)",
+      "backdropFilter": "blur(16px)",
+      "borderBottom": "1px solid rgba(255, 30, 30, 0.14)"
+    },
+    "hero": {
+      "id": "inicio",
+      "heightDesktop": "540px",
+      "heightMobile": "760px",
+      "backgroundImage": "FundoFutebolAmericano.png",
+      "foregroundImage": "JogadorFutebolAmericano.png",
+      "content": {
+        "eyebrow": "",
+        "title": "Futebol Americano",
+        "subtitle": "Força. Estratégia. Adrenalina.",
+        "description": "Cada jarda importa. Cada jogada pode mudar tudo.",
+        "primaryButton": {
+          "label": "Acompanhar ao vivo",
+          "icon": "broadcast",
+          "href": "#ao-vivo"
+        }
+      },
+      "visualRules": {
+        "keepPlayerCenterRightDesktop": true,
+        "textColumnWidth": "42%",
+        "avoidTextOverPlayer": true,
+        "applyDarkGradientBehindText": true,
+        "useRedParticles": true,
+        "keepFieldLinesVisible": true,
+        "playerFileRequired": "JogadorFutebolAmericano.png"
+      }
+    },
+    "nextGame": {
+      "id": "proximo-jogo",
+      "title": "Próximo Jogo",
+      "type": "match-versus-card",
+      "position": "hero-right",
+      "dataSource": "api.endpoints.nextGame",
+      "fallbackDataId": "next-game-001",
+      "content": {
+        "date": "26 MAI",
+        "time": "20:00",
+        "stadium": "Hawk Stadium",
+        "homeTeamId": "red-hawks",
+        "awayTeamId": "iron-bears",
+        "buttonLabel": "Ver detalhes"
+      }
+    },
+    "gameCalendar": {
+      "id": "calendario-de-jogos",
+      "title": "Calendário de Jogos",
+      "type": "match-list-card",
+      "dataSource": "api.endpoints.gameCalendar",
+      "maxItems": 4,
+      "action": {
+        "label": "Ver todos",
+        "href": "#jogos"
+      }
+    },
+    "standings": {
+      "id": "classificacao",
+      "title": "Classificação",
+      "type": "standings-table-card",
+      "dataSource": "api.endpoints.standings",
+      "conferenceLabel": "Conferência Norte",
+      "columns": [
+        "Pos",
+        "Time",
+        "J",
+        "V",
+        "D",
+        "%",
+        "PTS"
+      ],
+      "maxItems": 6,
+      "action": {
+        "label": "Ver tabela completa",
+        "href": "#classificacao"
+      }
+    },
+    "bestPlays": {
+      "id": "melhores-jogadas",
+      "title": "Melhores Jogadas",
+      "type": "video-highlight-card",
+      "dataSource": "api.endpoints.bestPlays",
+      "fallbackDataId": "best-play-001",
+      "image": "FeedFutebolAmericano-3.png",
+      "content": {
+        "title": "Touchdown Épico!",
+        "description": "A jogada que levantou a torcida!",
+        "buttonLabel": "Assistir agora"
+      },
+      "action": {
+        "label": "Ver todas",
+        "href": "#videos"
+      }
+    },
+    "playerHighlights": {
+      "id": "destaques-dos-jogadores",
+      "title": "Destaques dos Jogadores",
+      "type": "podium-card",
+      "dataSource": "api.endpoints.playerHighlights",
+      "maxItems": 3,
+      "action": {
+        "label": "Ver ranking",
+        "href": "#atletas"
+      }
+    },
+    "featuredNews": {
+      "id": "noticias",
+      "title": "Notícias em Destaque",
+      "type": "news-grid-card",
+      "dataSource": "api.endpoints.news",
+      "maxItems": 3,
+      "action": {
+        "label": "Ver todas",
+        "href": "#noticias"
+      }
+    },
+    "leagueStats": {
+      "id": "estatisticas-da-liga",
+      "title": "Estatísticas da Liga",
+      "type": "stats-grid-card",
+      "dataSource": "api.endpoints.leagueStats",
+      "maxItems": 4,
+      "action": {
+        "label": "Ver todas",
+        "href": "#estatisticas"
+      }
+    },
+    "topScorers": {
+      "id": "artilheiros",
+      "title": "Artilheiros",
+      "type": "scorers-ranking-card",
+      "dataSource": "api.endpoints.topScorers",
+      "maxItems": 5,
+      "action": {
+        "label": "Ver ranking",
+        "href": "#artilheiros"
+      }
+    },
+    "bottomShortcuts": {
+      "id": "atalhos-inferiores",
+      "type": "horizontal-feature-strip",
+      "itemsPerRowDesktop": 5,
+      "itemsPerRowMobile": 1
+    }
+  },
+  "data": {
+    "teams": [
+      {
+        "id": "red-hawks",
+        "name": "Red Hawks",
+        "shortName": "RHA",
+        "logo": "team-red-hawks.svg",
+        "primaryColor": "#D71920",
+        "secondaryColor": "#111111"
+      },
+      {
+        "id": "steelers",
+        "name": "Steelers",
+        "shortName": "STE",
+        "logo": "team-steelers.svg",
+        "primaryColor": "#B6B6B6",
+        "secondaryColor": "#111111"
+      },
+      {
+        "id": "bulls",
+        "name": "Bulls",
+        "shortName": "BUL",
+        "logo": "team-bulls.svg",
+        "primaryColor": "#C90000",
+        "secondaryColor": "#FFFFFF"
+      },
+      {
+        "id": "predators",
+        "name": "Predators",
+        "shortName": "PRE",
+        "logo": "team-predators.svg",
+        "primaryColor": "#FF1E1E",
+        "secondaryColor": "#111111"
+      },
+      {
+        "id": "wolves",
+        "name": "Wolves",
+        "shortName": "WOL",
+        "logo": "team-wolves.svg",
+        "primaryColor": "#7E7E7E",
+        "secondaryColor": "#111111"
+      },
+      {
+        "id": "iron-bears",
+        "name": "Iron Bears",
+        "shortName": "IBE",
+        "logo": "team-iron-bears.svg",
+        "primaryColor": "#009B4D",
+        "secondaryColor": "#111111"
+      },
+      {
+        "id": "falcons",
+        "name": "Falcons",
+        "shortName": "FAL",
+        "logo": "team-falcons.svg",
+        "primaryColor": "#B80000",
+        "secondaryColor": "#FFFFFF"
+      },
+      {
+        "id": "hurricanes",
+        "name": "Hurricanes",
+        "shortName": "HUR",
+        "logo": "team-hurricanes.svg",
+        "primaryColor": "#003B6F",
+        "secondaryColor": "#FFFFFF"
+      }
+    ],
+    "nextGame": {
+      "id": "next-game-001",
+      "date": "26 MAI",
+      "time": "20:00",
+      "stadium": "Hawk Stadium",
+      "homeTeamId": "red-hawks",
+      "awayTeamId": "iron-bears",
+      "status": "scheduled",
+      "buttonLabel": "Ver detalhes"
+    },
+    "gameCalendar": [
+      {
+        "id": "game-001",
+        "date": "24 MAI",
+        "time": "19:00",
+        "homeTeamId": "red-hawks",
+        "awayTeamId": "steelers",
+        "status": "scheduled"
+      },
+      {
+        "id": "game-002",
+        "date": "25 MAI",
+        "time": "16:00",
+        "homeTeamId": "bulls",
+        "awayTeamId": "predators",
+        "status": "scheduled"
+      },
+      {
+        "id": "game-003",
+        "date": "26 MAI",
+        "time": "20:00",
+        "homeTeamId": "wolves",
+        "awayTeamId": "iron-bears",
+        "status": "scheduled"
+      },
+      {
+        "id": "game-004",
+        "date": "27 MAI",
+        "time": "18:30",
+        "homeTeamId": "falcons",
+        "awayTeamId": "hurricanes",
+        "status": "scheduled"
+      }
+    ],
+    "standings": [
+      {
+        "position": 1,
+        "conference": "Norte",
+        "teamId": "red-hawks",
+        "games": 8,
+        "wins": 7,
+        "losses": 1,
+        "percentage": "87.5",
+        "points": 14
+      },
+      {
+        "position": 2,
+        "conference": "Norte",
+        "teamId": "wolves",
+        "games": 8,
+        "wins": 6,
+        "losses": 2,
+        "percentage": "75.0",
+        "points": 12
+      },
+      {
+        "position": 3,
+        "conference": "Norte",
+        "teamId": "steelers",
+        "games": 8,
+        "wins": 5,
+        "losses": 3,
+        "percentage": "62.5",
+        "points": 10
+      },
+      {
+        "position": 4,
+        "conference": "Norte",
+        "teamId": "iron-bears",
+        "games": 8,
+        "wins": 4,
+        "losses": 4,
+        "percentage": "50.0",
+        "points": 8
+      },
+      {
+        "position": 5,
+        "conference": "Norte",
+        "teamId": "predators",
+        "games": 8,
+        "wins": 2,
+        "losses": 6,
+        "percentage": "25.0",
+        "points": 4
+      },
+      {
+        "position": 6,
+        "conference": "Norte",
+        "teamId": "hurricanes",
+        "games": 8,
+        "wins": 1,
+        "losses": 7,
+        "percentage": "12.5",
+        "points": 2
+      }
+    ],
+    "bestPlays": {
+      "id": "best-play-001",
+      "title": "Touchdown Épico!",
+      "description": "A jogada que levantou a torcida!",
+      "thumbnail": "FeedFutebolAmericano-3.png",
+      "videoUrl": "https://www.youtube.com/watch?v=qK1gpCtCTDE",
+      "buttonLabel": "Assistir agora"
+    },
+    "playerHighlights": [
+      {
+        "position": 1,
+        "playerName": "T. Anderson",
+        "teamId": "red-hawks",
+        "value": "2.345",
+        "metric": "Jardas Passe",
+        "avatar": "player-t-anderson.png"
+      },
+      {
+        "position": 2,
+        "playerName": "J. Williams",
+        "teamId": "wolves",
+        "value": "1.242",
+        "metric": "Jardas Corrida",
+        "avatar": "player-j-williams.png"
+      },
+      {
+        "position": 3,
+        "playerName": "M. Brown",
+        "teamId": "steelers",
+        "value": "18",
+        "metric": "Touchdowns",
+        "avatar": "player-m-brown.png"
+      }
+    ],
+    "featuredNews": [
+      {
+        "id": "news-001",
+        "title": "Red Hawks mantêm liderança da conferência",
+        "date": "23 MAI 2024",
+        "image": "FeedFutebolAmericano-2.png",
+        "url": "#noticia-001"
+      },
+      {
+        "id": "news-002",
+        "title": "Jovem quarterback brilha novamente",
+        "date": "22 MAI 2024",
+        "image": "FeedFutebolAmericano-3.png",
+        "url": "#noticia-002"
+      },
+      {
+        "id": "news-003",
+        "title": "Hawk Stadium terá jogo noturno especial",
+        "date": "21 MAI 2024",
+        "image": "FeedFutebolAmericano-1.png",
+        "url": "#noticia-003"
+      }
+    ],
+    "leagueStats": [
+      {
+        "id": "points-per-game",
+        "label": "Pontos por jogo",
+        "value": "28.4",
+        "unit": "",
+        "description": "Média",
+        "icon": "scoreboard"
+      },
+      {
+        "id": "yards-per-game",
+        "label": "Jardas por jogo",
+        "value": "412.7",
+        "unit": "",
+        "description": "Média",
+        "icon": "field-yard"
+      },
+      {
+        "id": "third-down-conversion",
+        "label": "% Conversão 3ª descida",
+        "value": "46.8",
+        "unit": "%",
+        "description": "Média",
+        "icon": "target"
+      },
+      {
+        "id": "turnovers-per-game",
+        "label": "Turnovers por jogo",
+        "value": "1.3",
+        "unit": "",
+        "description": "Média",
+        "icon": "turnover"
+      }
+    ],
+    "topScorers": [
+      {
+        "position": 1,
+        "playerName": "T. Anderson",
+        "teamId": "red-hawks",
+        "value": "2.345",
+        "unit": "JDS",
+        "avatar": "player-t-anderson.png"
+      },
+      {
+        "position": 2,
+        "playerName": "J. Carter",
+        "teamId": "wolves",
+        "value": "2.102",
+        "unit": "JDS",
+        "avatar": "player-j-carter.png"
+      },
+      {
+        "position": 3,
+        "playerName": "M. Thompson",
+        "teamId": "steelers",
+        "value": "1.987",
+        "unit": "JDS",
+        "avatar": "player-m-thompson.png"
+      },
+      {
+        "position": 4,
+        "playerName": "D. Wilson",
+        "teamId": "iron-bears",
+        "value": "1.765",
+        "unit": "JDS",
+        "avatar": "player-d-wilson.png"
+      },
+      {
+        "position": 5,
+        "playerName": "K. Miller",
+        "teamId": "bulls",
+        "value": "1.654",
+        "unit": "JDS",
+        "avatar": "player-k-miller.png"
+      }
+    ],
+    "bottomShortcuts": [
+      {
+        "id": "live-transmission",
+        "icon": "broadcast",
+        "title": "Transmissão ao vivo",
+        "description": "Acompanhe todos os jogos em tempo real.",
+        "href": "#ao-vivo"
+      },
+      {
+        "id": "complete-stats",
+        "icon": "bar-chart",
+        "title": "Estatísticas completas",
+        "description": "Dados detalhados de times e jogadores.",
+        "href": "#estatisticas"
+      },
+      {
+        "id": "exclusive-news",
+        "icon": "newspaper",
+        "title": "Notícias exclusivas",
+        "description": "Cobertura completa do world do futebol americano.",
+        "href": "#noticias"
+      },
+      {
+        "id": "best-moments",
+        "icon": "play-circle",
+        "title": "Vídeos e melhores momentos",
+        "description": "Os melhores lances e touchdowns da temporada.",
+        "href": "#videos"
+      },
+      {
+        "id": "personal-alerts",
+        "icon": "bell",
+        "title": "Alertas personalizados",
+        "description": "Receba notificações dos seus times favoritos.",
+        "href": "#notificacoes"
+      }
+    ]
+  }
+}

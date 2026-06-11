@@ -1,0 +1,17 @@
+/* ==========================================================================
+   POWERSPORT - GLOBAL VARIABLES & THEME TOKENS (variables.css)
+   ========================================================================== */
+
+:root {
+  --black: #050505;
+  --white: #FFFFFF;
+  --blue-neon: #00BFFF;
+  --cyan: #00FFFF;
+  --red-neon: #FF1E1E;
+  --orange: #FF6A00;
+  --gold: #FFD700;
+  --purple: #8A2BE2;
+  --magenta: #FF00FF;
+  --font-display: 'Bebas Neue', 'Impact', sans-serif;
+  --font-body: 'Montserrat', sans-serif;
+}
