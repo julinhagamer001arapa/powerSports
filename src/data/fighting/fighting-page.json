@@ -1,0 +1,1212 @@
+{
+  "page": {
+    "id": "powersport-fighting-home",
+    "name": "PowerSport - Lutas",
+    "type": "sports-dashboard-landing-page",
+    "language": "pt-BR",
+    "theme": "dark-purple-arena",
+    "sport": "fighting",
+    "description": "Página esportiva de lutas com hero principal, próxima luta, próximas lutas, ranking oficial, destaques, estatísticas da liga, notícias, eventos, atletas em alta e atalhos inferiores.",
+    "apiConnected": true,
+    "recommendedFileName": "fighting-page.json",
+    "feedImagesAvailable": false
+  },
+  "brand": {
+    "name": "PowerSport",
+    "logoText": {
+      "main": "Power",
+      "highlight": "Sport"
+    },
+    "logoStyle": {
+      "mainColor": "#FFFFFF",
+      "highlightColor": "#A020FF",
+      "fontWeight": 900,
+      "fontStyle": "italic",
+      "letterSpacing": "-0.04em",
+      "textTransform": "uppercase"
+    },
+    "slogan": "Disciplina. Coragem. Superação."
+  },
+  "assets": {
+    "basePath": "./assets/images/",
+    "images": {
+      "referenceMockup": {
+        "fileName": "ChatGPT Image 30 de abr. de 2026, 08_46_16.png",
+        "role": "visual-reference",
+        "usage": "Imagem de referência geral da página completa. Usar apenas como base visual para reconstruir o layout.",
+        "recommendedAlt": "Mockup completo da página PowerSport de lutas"
+      },
+      "heroBackground": {
+        "fileName": "FundoLuta.png",
+        "role": "hero-background",
+        "usage": "Imagem principal de fundo da seção hero, com octógono, iluminação roxa, fumaça e atmosfera de arena de luta.",
+        "recommendedAlt": "Arena de lutas com octógono, luzes roxas e fumaça no fundo",
+        "recommendedSection": "hero",
+        "css": {
+          "objectFit": "cover",
+          "objectPosition": "center center",
+          "overlay": "linear-gradient(90deg, rgba(0,0,0,0.98) 0%, rgba(16,0,26,0.86) 35%, rgba(45,0,72,0.38) 66%, rgba(0,0,0,0.92) 100%)"
+        }
+      },
+      "heroFighters": {
+        "fileName": "Lutadores.png",
+        "role": "hero-foreground-fighters",
+        "usage": "Imagem recortada dos dois lutadores principais em primeiro plano na seção hero.",
+        "recommendedAlt": "Dois lutadores em posição de combate com luvas em destaque",
+        "recommendedSection": "hero",
+        "css": {
+          "position": "absolute",
+          "right": "27%",
+          "bottom": "-4%",
+          "widthDesktop": "48vw",
+          "maxWidth": "760px",
+          "minWidth": "420px",
+          "zIndex": 3,
+          "filter": "drop-shadow(0 0 36px rgba(160, 32, 255, 0.58)) drop-shadow(0 0 22px rgba(255, 255, 255, 0.12))"
+        }
+      },
+      "feedFallback": {
+        "fileName": "ChatGPT Image 30 de abr. de 2026, 08_46_16.png",
+        "role": "temporary-feed-image",
+        "usage": "Imagem temporária para cards de notícias, destaques e eventos enquanto não houver imagens de feed separadas.",
+        "recommendedAlt": "Imagem temporária de conteúdo de lutas",
+        "recommendedSection": "featuredNews, highlights, events",
+        "note": "Como não existem imagens separadas de feed para esta página, os cards estão preparados para receber imagens futuras.",
+        "css": {
+          "objectFit": "cover",
+          "objectPosition": "center center"
+        }
+      }
+    },
+    "missingRecommendedImages": [
+      {
+        "suggestedFileName": "FeedLutaDestaque.png",
+        "recommendedUse": "Card de destaques: Nocaute Incrível"
+      },
+      {
+        "suggestedFileName": "FeedLutaNoticiaCinturao.png",
+        "recommendedUse": "Notícia: Pereira defende cinturão com nocaute espetacular"
+      },
+      {
+        "suggestedFileName": "FeedLutaColetiva.png",
+        "recommendedUse": "Notícia: coletiva, rivalidade ou tensão antes do combate"
+      },
+      {
+        "suggestedFileName": "FeedLutaNovoDesafiante.png",
+        "recommendedUse": "Notícia: novo desafiante na categoria"
+      },
+      {
+        "suggestedFileName": "FeedLutaEventoUFC.png",
+        "recommendedUse": "Eventos em destaque"
+      },
+      {
+        "suggestedFileName": "FeedLutaAtletas.png",
+        "recommendedUse": "Atletas em alta e ranking visual"
+      }
+    ]
+  },
+  "theme": {
+    "colors": {
+      "backgroundPrimary": "#050008",
+      "backgroundSecondary": "#0B0012",
+      "backgroundTertiary": "#150024",
+      "surfacePrimary": "rgba(12, 0, 20, 0.9)",
+      "surfaceSecondary": "rgba(32, 0, 52, 0.78)",
+      "surfaceCard": "rgba(10, 0, 18, 0.94)",
+      "surfaceGlass": "rgba(45, 0, 72, 0.56)",
+      "borderPrimary": "#A020FF",
+      "borderSecondary": "rgba(160, 32, 255, 0.62)",
+      "borderMuted": "rgba(205, 125, 255, 0.18)",
+      "textPrimary": "#FFFFFF",
+      "textSecondary": "#E8D0FF",
+      "textMuted": "#A875C8",
+      "textDark": "#12001D",
+      "accentPrimary": "#A020FF",
+      "accentSecondary": "#C04DFF",
+      "accentTertiary": "#7B00D6",
+      "accentGlow": "rgba(160, 32, 255, 0.66)",
+      "success": "#32F29A",
+      "warning": "#FFD447",
+      "danger": "#FF335C",
+      "rankGold": "#FFD447",
+      "rankSilver": "#DCD4E8",
+      "rankBronze": "#B96A38",
+      "white": "#FFFFFF",
+      "black": "#000000"
+    },
+    "gradients": {
+      "bodyBackground": "radial-gradient(circle at 50% 0%, rgba(160, 32, 255, 0.28) 0%, rgba(10, 0, 18, 1) 44%, rgba(0, 0, 0, 1) 100%)",
+      "heroOverlay": "linear-gradient(90deg, rgba(0,0,0,0.98) 0%, rgba(16,0,26,0.86) 35%, rgba(45,0,72,0.38) 66%, rgba(0,0,0,0.92) 100%)",
+      "cardBackground": "linear-gradient(180deg, rgba(28, 0, 46, 0.96) 0%, rgba(7, 0, 12, 0.98) 100%)",
+      "buttonPrimary": "linear-gradient(135deg, #C04DFF 0%, #7B00D6 100%)",
+      "buttonSecondary": "linear-gradient(135deg, rgba(160, 32, 255, 0.26) 0%, rgba(70, 0, 120, 0.54) 100%)",
+      "bottomStats": "linear-gradient(90deg, rgba(12, 0, 20, 0.96) 0%, rgba(38, 0, 62, 0.86) 100%)",
+      "cageGlow": "linear-gradient(135deg, rgba(160, 32, 255, 0.82) 0%, rgba(255, 255, 255, 0.14) 100%)"
+    },
+    "effects": {
+      "glassBlur": "blur(14px)",
+      "cardShadow": "0 0 24px rgba(160, 32, 255, 0.34)",
+      "cardHoverShadow": "0 0 36px rgba(160, 32, 255, 0.58)",
+      "textGlow": "0 0 16px rgba(160, 32, 255, 0.68)",
+      "imageDarkOverlay": "rgba(0, 0, 0, 0.46)",
+      "dividerGlow": "linear-gradient(90deg, transparent, rgba(160, 32, 255, 0.9), transparent)"
+    },
+    "borderRadius": {
+      "xs": "4px",
+      "sm": "8px",
+      "md": "12px",
+      "lg": "18px",
+      "xl": "28px",
+      "full": "999px"
+    },
+    "spacing": {
+      "pagePaddingDesktop": "32px",
+      "pagePaddingTablet": "22px",
+      "pagePaddingMobile": "16px",
+      "sectionGap": "18px",
+      "cardPadding": "16px",
+      "cardPaddingCompact": "12px"
+    }
+  },
+  "typography": {
+    "fontFamilies": {
+      "display": "'Bebas Neue', 'Oswald', 'Impact', sans-serif",
+      "heading": "'Oswald', 'Roboto Condensed', sans-serif",
+      "body": "'Inter', 'Roboto', Arial, sans-serif",
+      "numbers": "'Rajdhani', 'Roboto Condensed', sans-serif"
+    },
+    "styles": {
+      "heroTitle": {
+        "fontFamily": "display",
+        "fontSizeDesktop": "clamp(5rem, 8vw, 8.8rem)",
+        "fontSizeMobile": "clamp(3.5rem, 15vw, 5.4rem)",
+        "fontWeight": 900,
+        "lineHeight": 0.88,
+        "letterSpacing": "-0.035em",
+        "textTransform": "uppercase",
+        "color": "#FFFFFF",
+        "textShadow": "0 0 26px rgba(160, 32, 255, 0.32)"
+      },
+      "heroSubtitle": {
+        "fontFamily": "heading",
+        "fontSizeDesktop": "2.05rem",
+        "fontSizeMobile": "1.45rem",
+        "fontWeight": 900,
+        "fontStyle": "italic",
+        "textTransform": "uppercase",
+        "color": "#A020FF",
+        "lineHeight": 1.05,
+        "textShadow": "0 0 16px rgba(160, 32, 255, 0.52)"
+      },
+      "sectionTitle": {
+        "fontFamily": "heading",
+        "fontSize": "1.15rem",
+        "fontWeight": 900,
+        "fontStyle": "italic",
+        "textTransform": "uppercase",
+        "color": "#FFFFFF"
+      },
+      "sectionTitleAccent": {
+        "fontFamily": "heading",
+        "fontSize": "1.15rem",
+        "fontWeight": 900,
+        "fontStyle": "italic",
+        "textTransform": "uppercase",
+        "color": "#A020FF"
+      },
+      "bodyText": {
+        "fontFamily": "body",
+        "fontSize": "0.95rem",
+        "fontWeight": 400,
+        "lineHeight": 1.5,
+        "color": "#E8D0FF"
+      },
+      "smallLabel": {
+        "fontFamily": "heading",
+        "fontSize": "0.72rem",
+        "fontWeight": 700,
+        "textTransform": "uppercase",
+        "color": "#A875C8"
+      },
+      "statNumber": {
+        "fontFamily": "numbers",
+        "fontSize": "1.55rem",
+        "fontWeight": 900,
+        "color": "#FFFFFF"
+      },
+      "purpleMetric": {
+        "fontFamily": "numbers",
+        "fontSize": "1.55rem",
+        "fontWeight": 900,
+        "color": "#A020FF"
+      }
+    }
+  },
+  "layout": {
+    "viewport": {
+      "maxWidth": "1920px",
+      "minHeight": "100vh"
+    },
+    "structure": [
+      "header",
+      "hero",
+      "mainDashboardGrid",
+      "secondaryDashboardGrid",
+      "bottomShortcuts"
+    ],
+    "grid": {
+      "desktop": {
+        "columns": 12,
+        "gap": "18px",
+        "areas": {
+          "upcomingFights": "span 4",
+          "officialRanking": "span 3",
+          "highlights": "span 2",
+          "leagueStats": "span 3",
+          "featuredNews": "span 4",
+          "featuredEvents": "span 3",
+          "trendingAthletes": "span 5"
+        }
+      },
+      "tablet": {
+        "columns": 6,
+        "gap": "16px",
+        "areas": {
+          "upcomingFights": "span 3",
+          "officialRanking": "span 3",
+          "highlights": "span 3",
+          "leagueStats": "span 3",
+          "featuredNews": "span 6",
+          "featuredEvents": "span 3",
+          "trendingAthletes": "span 3"
+        }
+      },
+      "mobile": {
+        "columns": 1,
+        "gap": "14px",
+        "areas": {
+          "all": "span 1"
+        }
+      }
+    },
+    "breakpoints": {
+      "mobile": "0px",
+      "tablet": "768px",
+      "desktop": "1200px",
+      "wide": "1440px"
+    }
+  },
+  "api": {
+    "enabled": true,
+    "baseUrl": "/api",
+    "timeoutMs": 12000,
+    "fallbackToStaticData": true,
+    "endpoints": {
+      "fighters": {
+        "method": "GET",
+        "path": "/fighting/fighters",
+        "bindTo": "data.fighters"
+      },
+      "nextFight": {
+        "method": "GET",
+        "path": "/fighting/fights/next",
+        "bindTo": "data.nextFight"
+      },
+      "upcomingFights": {
+        "method": "GET",
+        "path": "/fighting/fights/upcoming",
+        "bindTo": "data.upcomingFights"
+      },
+      "officialRanking": {
+        "method": "GET",
+        "path": "/fighting/ranking/official",
+        "bindTo": "data.officialRanking"
+      },
+      "highlights": {
+        "method": "GET",
+        "path": "/fighting/highlights",
+        "bindTo": "data.highlights"
+      },
+      "leagueStats": {
+        "method": "GET",
+        "path": "/fighting/league/stats",
+        "bindTo": "data.leagueStats"
+      },
+      "news": {
+        "method": "GET",
+        "path": "/fighting/news",
+        "bindTo": "data.featuredNews"
+      },
+      "events": {
+        "method": "GET",
+        "path": "/fighting/events/featured",
+        "bindTo": "data.featuredEvents"
+      },
+      "trendingAthletes": {
+        "method": "GET",
+        "path": "/fighting/athletes/trending",
+        "bindTo": "data.trendingAthletes"
+      },
+      "shortcuts": {
+        "method": "GET",
+        "path": "/fighting/shortcuts",
+        "bindTo": "data.bottomShortcuts"
+      }
+    },
+    "expectedResponseShape": {
+      "fighters": "Array<{ id, name, country, record, category, avatar }>",
+      "nextFight": "{ id, date, time, category, arena, fighterAId, fighterBId, status }",
+      "upcomingFights": "Array<{ id, date, time, fighterAId, fighterBId, category, status }>",
+      "officialRanking": "Array<{ position, fighterId, country, record, category }>",
+      "highlights": "Array<{ id, title, description, thumbnail, videoUrl }>",
+      "leagueStats": "Array<{ id, label, value, unit, icon }>",
+      "news": "Array<{ id, title, date, image, url }>",
+      "events": "Array<{ id, name, date, time, arena, location, logo }>",
+      "trendingAthletes": "Array<{ position, fighterId, category, record, avatar }>",
+      "shortcuts": "Array<{ id, icon, title, description, href }>"
+    }
+  },
+  "navigation": {
+    "activeItem": "inicio",
+    "items": [
+      {
+        "id": "inicio",
+        "label": "Início",
+        "href": "#inicio"
+      },
+      {
+        "id": "lutas",
+        "label": "Lutas",
+        "href": "#lutas"
+      },
+      {
+        "id": "noticias",
+        "label": "Notícias",
+        "href": "#noticias"
+      },
+      {
+        "id": "ranking",
+        "label": "Ranking",
+        "href": "#ranking"
+      },
+      {
+        "id": "atletas",
+        "label": "Atletas",
+        "href": "#atletas"
+      },
+      {
+        "id": "videos",
+        "label": "Vídeos",
+        "href": "#videos"
+      },
+      {
+        "id": "eventos",
+        "label": "Eventos",
+        "href": "#eventos"
+      },
+      {
+        "id": "contato",
+        "label": "Contato",
+        "href": "#contato"
+      }
+    ],
+    "actions": [
+      {
+        "id": "search",
+        "type": "icon-button",
+        "icon": "search",
+        "ariaLabel": "Pesquisar"
+      },
+      {
+        "id": "notifications",
+        "type": "icon-button",
+        "icon": "bell",
+        "ariaLabel": "Notificações"
+      },
+      {
+        "id": "profile",
+        "type": "icon-button",
+        "icon": "user-circle",
+        "ariaLabel": "Perfil"
+      },
+      {
+        "id": "live",
+        "type": "primary-button",
+        "label": "Ao Vivo",
+        "icon": "broadcast",
+        "href": "#ao-vivo"
+      }
+    ]
+  },
+  "sections": {
+    "header": {
+      "id": "site-header",
+      "position": "fixed",
+      "height": "72px",
+      "zIndex": 20,
+      "background": "linear-gradient(180deg, rgba(0,0,0,0.94) 0%, rgba(0,0,0,0.42) 100%)",
+      "backdropFilter": "blur(16px)",
+      "borderBottom": "1px solid rgba(160, 32, 255, 0.14)"
+    },
+    "hero": {
+      "id": "inicio",
+      "heightDesktop": "540px",
+      "heightMobile": "780px",
+      "backgroundImage": "FundoLuta.png",
+      "foregroundImage": "Lutadores.png",
+      "content": {
+        "eyebrow": "",
+        "title": "Lutas",
+        "subtitle": "Disciplina. Coragem. Superação.",
+        "description": "No octógono ou no ringue, só os fortes chegam ao topo.",
+        "primaryButton": {
+          "label": "Acompanhar ao vivo",
+          "icon": "broadcast",
+          "href": "#ao-vivo"
+        }
+      },
+      "visualRules": {
+        "keepFightersCenterDesktop": true,
+        "textColumnWidth": "40%",
+        "avoidTextOverFighters": true,
+        "applyDarkGradientBehindText": true,
+        "usePurpleSmoke": true,
+        "keepCageVisible": true,
+        "foregroundFileRequired": "Lutadores.png"
+      }
+    },
+    "nextFight": {
+      "id": "proxima-luta",
+      "title": "Próxima Luta",
+      "type": "fight-versus-card",
+      "position": "hero-right",
+      "dataSource": "api.endpoints.nextFight",
+      "fallbackDataId": "next-fight-001",
+      "content": {
+        "date": "01 JUN",
+        "time": "22:00",
+        "category": "Cinturão Peso Médio",
+        "arena": "T-Mobile Arena, Las Vegas",
+        "fighterAId": "pereira",
+        "fighterBId": "adesanya",
+        "buttonLabel": "Ver detalhes"
+      }
+    },
+    "upcomingFights": {
+      "id": "proximas-lutas",
+      "title": "Próximas Lutas",
+      "type": "fight-list-card",
+      "dataSource": "api.endpoints.upcomingFights",
+      "maxItems": 5,
+      "action": {
+        "label": "Ver todas",
+        "href": "#lutas"
+      }
+    },
+    "officialRanking": {
+      "id": "ranking-oficial",
+      "title": "Ranking Oficial",
+      "type": "ranking-table-card",
+      "dataSource": "api.endpoints.officialRanking",
+      "tabs": [
+        {
+          "id": "pound-for-pound",
+          "label": "Peso por Peso"
+        },
+        {
+          "id": "lightweight",
+          "label": "Peso Leve"
+        },
+        {
+          "id": "middleweight",
+          "label": "Peso Médio"
+        },
+        {
+          "id": "light-heavyweight",
+          "label": "Peso Meio-Pesado"
+        },
+        {
+          "id": "heavyweight",
+          "label": "Peso Pesado"
+        }
+      ],
+      "activeTab": "lightweight",
+      "columns": [
+        "Pos",
+        "Atleta",
+        "País",
+        "Recorde"
+      ],
+      "maxItems": 5,
+      "action": {
+        "label": "Ver ranking completo",
+        "href": "#ranking"
+      }
+    },
+    "highlights": {
+      "id": "destaques",
+      "title": "Destaques",
+      "type": "video-highlight-card",
+      "dataSource": "api.endpoints.highlights",
+      "fallbackDataId": "highlight-001",
+      "image": "ChatGPT Image 30 de abr. de 2026, 08_46_16.png",
+      "content": {
+        "title": "Nocaute Incrível!",
+        "description": "Reviva o nocaute que parou o evento!",
+        "buttonLabel": "Assistir agora"
+      },
+      "action": {
+        "label": "Ver todos",
+        "href": "#videos"
+      }
+    },
+    "leagueStats": {
+      "id": "estatisticas-da-liga",
+      "title": "Estatísticas da Liga",
+      "type": "stats-list-card",
+      "dataSource": "api.endpoints.leagueStats",
+      "maxItems": 5,
+      "action": {
+        "label": "Ver todas",
+        "href": "#estatisticas"
+      }
+    },
+    "featuredNews": {
+      "id": "noticias",
+      "title": "Notícias em Destaque",
+      "type": "news-grid-card",
+      "dataSource": "api.endpoints.news",
+      "maxItems": 3,
+      "usesFallbackImages": true,
+      "action": {
+        "label": "Ver todas",
+        "href": "#noticias"
+      }
+    },
+    "featuredEvents": {
+      "id": "eventos-em-destaque",
+      "title": "Eventos em Destaque",
+      "type": "events-list-card",
+      "dataSource": "api.endpoints.events",
+      "maxItems": 3,
+      "action": {
+        "label": "Ver todos",
+        "href": "#eventos"
+      }
+    },
+    "trendingAthletes": {
+      "id": "atletas-em-alta",
+      "title": "Atletas em Alta",
+      "type": "horizontal-athlete-ranking-card",
+      "dataSource": "api.endpoints.trendingAthletes",
+      "maxItems": 5,
+      "action": {
+        "label": "Ver ranking",
+        "href": "#atletas"
+      }
+    },
+    "bottomShortcuts": {
+      "id": "atalhos-inferiores",
+      "type": "horizontal-feature-strip",
+      "itemsPerRowDesktop": 5,
+      "itemsPerRowMobile": 1
+    }
+  },
+  "data": {
+    "fighters": [
+      {
+        "id": "oliveira",
+        "name": "Oliveira",
+        "country": "Brasil",
+        "record": "34-10-0",
+        "category": "Leve",
+        "avatar": "fighter-oliveira.png"
+      },
+      {
+        "id": "makhachev",
+        "name": "Islam Makhachev",
+        "country": "Rússia",
+        "record": "27-1-0",
+        "category": "Leve",
+        "avatar": "fighter-makhachev.png"
+      },
+      {
+        "id": "volkanovski",
+        "name": "Volkanovski",
+        "country": "Austrália",
+        "record": "26-4-0",
+        "category": "Pena",
+        "avatar": "fighter-volkanovski.png"
+      },
+      {
+        "id": "holloway",
+        "name": "Holloway",
+        "country": "EUA",
+        "record": "26-8-0",
+        "category": "Pena",
+        "avatar": "fighter-holloway.png"
+      },
+      {
+        "id": "pereira",
+        "name": "Pereira",
+        "country": "Brasil",
+        "record": "12-0",
+        "category": "Médio",
+        "avatar": "fighter-pereira.png"
+      },
+      {
+        "id": "adesanya",
+        "name": "Adesanya",
+        "country": "Nigéria",
+        "record": "24-4-0",
+        "category": "Médio",
+        "avatar": "fighter-adesanya.png"
+      },
+      {
+        "id": "whittaker",
+        "name": "R. Whittaker",
+        "country": "Austrália",
+        "record": "27-7-0",
+        "category": "Médio",
+        "avatar": "fighter-whittaker.png"
+      },
+      {
+        "id": "chimaev",
+        "name": "Chimaev",
+        "country": "Suécia",
+        "record": "13-0-0",
+        "category": "Médio",
+        "avatar": "fighter-chimaev.png"
+      },
+      {
+        "id": "blachowicz",
+        "name": "Blachowicz",
+        "country": "Polônia",
+        "record": "29-10-1",
+        "category": "Meio-Pesado",
+        "avatar": "fighter-blachowicz.png"
+      },
+      {
+        "id": "ankalaev",
+        "name": "Ankalaev",
+        "country": "Rússia",
+        "record": "19-1-1",
+        "category": "Meio-Pesado",
+        "avatar": "fighter-ankalaev.png"
+      },
+      {
+        "id": "tsarukyan",
+        "name": "Arman Tsarukyan",
+        "country": "Rússia",
+        "record": "22-3-0",
+        "category": "Leve",
+        "avatar": "fighter-tsarukyan.png"
+      },
+      {
+        "id": "poirier",
+        "name": "Dustin Poirier",
+        "country": "EUA",
+        "record": "30-8-0",
+        "category": "Leve",
+        "avatar": "fighter-poirier.png"
+      },
+      {
+        "id": "gaethje",
+        "name": "Justin Gaethje",
+        "country": "EUA",
+        "record": "25-5-0",
+        "category": "Leve",
+        "avatar": "fighter-gaethje.png"
+      }
+    ],
+    "nextFight": {
+      "id": "next-fight-001",
+      "date": "01 JUN",
+      "time": "22:00",
+      "category": "Cinturão Peso Médio",
+      "arena": "T-Mobile Arena, Las Vegas",
+      "fighterAId": "pereira",
+      "fighterBId": "adesanya",
+      "status": "scheduled",
+      "buttonLabel": "Ver detalhes"
+    },
+    "upcomingFights": [
+      {
+        "id": "fight-001",
+        "date": "18 MAI",
+        "time": "19:00",
+        "fighterAId": "oliveira",
+        "fighterBId": "makhachev",
+        "category": "Leve",
+        "status": "scheduled"
+      },
+      {
+        "id": "fight-002",
+        "date": "25 MAI",
+        "time": "20:00",
+        "fighterAId": "volkanovski",
+        "fighterBId": "holloway",
+        "category": "Pena",
+        "status": "scheduled"
+      },
+      {
+        "id": "fight-003",
+        "date": "01 JUN",
+        "time": "22:00",
+        "fighterAId": "pereira",
+        "fighterBId": "adesanya",
+        "category": "Médio",
+        "status": "scheduled"
+      },
+      {
+        "id": "fight-004",
+        "date": "08 JUN",
+        "time": "19:00",
+        "fighterAId": "whittaker",
+        "fighterBId": "chimaev",
+        "category": "Médio",
+        "status": "scheduled"
+      },
+      {
+        "id": "fight-005",
+        "date": "15 JUN",
+        "time": "18:00",
+        "fighterAId": "blachowicz",
+        "fighterBId": "ankalaev",
+        "category": "Meio-Pesado",
+        "status": "scheduled"
+      }
+    ],
+    "officialRanking": [
+      {
+        "position": 1,
+        "fighterId": "makhachev",
+        "country": "Rússia",
+        "record": "27-1-0",
+        "category": "Leve"
+      },
+      {
+        "position": 2,
+        "fighterId": "oliveira",
+        "country": "Brasil",
+        "record": "34-10-0",
+        "category": "Leve"
+      },
+      {
+        "position": 3,
+        "fighterId": "tsarukyan",
+        "country": "Rússia",
+        "record": "22-3-0",
+        "category": "Leve"
+      },
+      {
+        "position": 4,
+        "fighterId": "poirier",
+        "country": "EUA",
+        "record": "30-8-0",
+        "category": "Leve"
+      },
+      {
+        "position": 5,
+        "fighterId": "gaethje",
+        "country": "EUA",
+        "record": "25-5-0",
+        "category": "Leve"
+      }
+    ],
+    "highlights": [
+      {
+        "id": "highlight-001",
+        "title": "Nocaute Incrível!",
+        "description": "Reviva o nocaute que parou o evento!",
+        "thumbnail": "FeedLutaDestaque.png",
+        "videoUrl": "https://www.youtube.com/watch?v=N3Cu_zmkvac",
+        "buttonLabel": "Assistir agora"
+      }
+    ],
+    "leagueStats": [
+      {
+        "id": "knockouts",
+        "label": "Nocautes",
+        "value": "1,245",
+        "unit": "",
+        "icon": "boxing-glove"
+      },
+      {
+        "id": "submissions",
+        "label": "Finalizações",
+        "value": "842",
+        "unit": "",
+        "icon": "target"
+      },
+      {
+        "id": "fights-completed",
+        "label": "Lutas realizadas",
+        "value": "1,987",
+        "unit": "",
+        "icon": "octagon"
+      },
+      {
+        "id": "average-fight-time",
+        "label": "Tempo médio de luta",
+        "value": "14:32",
+        "unit": "",
+        "icon": "timer"
+      },
+      {
+        "id": "significant-strikes-per-minute",
+        "label": "Golpes significativos por min",
+        "value": "5.28",
+        "unit": "",
+        "icon": "impact"
+      }
+    ],
+    "featuredNews": [
+      {
+        "id": "news-001",
+        "title": "Pereira defende cinturão com nocaute espetacular",
+        "date": "12 MAI 2024",
+        "image": "FeedLutaNoticiaCinturao.png",
+        "imageStatus": "live",
+        "url": "#noticia-001"
+      },
+      {
+        "id": "news-002",
+        "title": "Makhachev e Oliveira fazem cara a cara tenso antes do combate",
+        "date": "10 MAI 2024",
+        "image": "FeedLutaColetiva.png",
+        "imageStatus": "live",
+        "url": "#noticia-002"
+      },
+      {
+        "id": "news-003",
+        "title": "Novo desafiante surge na categoria dos pesos pesados",
+        "date": "09 MAI 2024",
+        "image": "FeedLutaNovoDesafiante.png",
+        "imageStatus": "live",
+        "url": "#noticia-003"
+      }
+    ],
+    "featuredEvents": [
+      {
+        "id": "event-001",
+        "name": "UFC 302",
+        "date": "01 JUN",
+        "time": "22:00",
+        "arena": "T-Mobile Arena",
+        "location": "Las Vegas, EUA",
+        "logo": "FeedLutaEventoUFC.png"
+      },
+      {
+        "id": "event-002",
+        "name": "UFC Fight Night",
+        "date": "15 JUN",
+        "time": "19:00",
+        "arena": "State Farm Arena",
+        "location": "Atlanta, EUA",
+        "logo": "FeedLutaEventoUFC.png"
+      },
+      {
+        "id": "event-003",
+        "name": "UFC 303",
+        "date": "29 JUN",
+        "time": "20:00",
+        "arena": "Mobile Arena",
+        "location": "Las Vegas, EUA",
+        "logo": "FeedLutaEventoUFC.png"
+      }
+    ],
+    "trendingAthletes": [
+      {
+        "position": 1,
+        "fighterId": "pereira",
+        "category": "Médio",
+        "record": "12-0",
+        "avatar": "fighter-pereira.png"
+      },
+      {
+        "position": 2,
+        "fighterId": "makhachev",
+        "category": "Leve",
+        "record": "11-1",
+        "avatar": "fighter-makhachev.png"
+      },
+      {
+        "position": 3,
+        "fighterId": "oliveira",
+        "category": "Leve",
+        "record": "9-1",
+        "avatar": "fighter-oliveira.png"
+      },
+      {
+        "position": 4,
+        "fighterId": "volkanovski",
+        "category": "Pena",
+        "record": "8-1",
+        "avatar": "fighter-volkanovski.png"
+      },
+      {
+        "position": 5,
+        "fighterId": "whittaker",
+        "category": "Médio",
+        "record": "7-1",
+        "avatar": "fighter-whittaker.png"
+      }
+    ],
+    "bottomShortcuts": [
+      {
+        "id": "live-transmission",
+        "icon": "broadcast",
+        "title": "Transmissão ao vivo",
+        "description": "Acompanhe todas as lutas em tempo real.",
+        "href": "#ao-vivo"
+      },
+      {
+        "id": "best-moments",
+        "icon": "play-circle",
+        "title": "Melhores momentos",
+        "description": "Assista aos nocautes e finalizações da semana.",
+        "href": "#videos"
+      },
+      {
+        "id": "updated-ranking",
+        "icon": "trophy",
+        "title": "Ranking atualizado",
+        "description": "Confira o ranking oficial dos melhores lutadores.",
+        "href": "#ranking"
+      },
+      {
+        "id": "exclusive-news",
+        "icon": "newspaper",
+        "title": "Notícias exclusivas",
+        "description": "Cobertura completa do mundo das lutas.",
+        "href": "#noticias"
+      },
+      {
+        "id": "personal-alerts",
+        "icon": "bell",
+        "title": "Alertas personalizados",
+        "description": "Receba notificações das suas lutas e atletas favoritos.",
+        "href": "#notificacoes"
+      }
+    ]
+  },
+  "components": {
+    "card": {
+      "background": "linear-gradient(180deg, rgba(28, 0, 46, 0.96) 0%, rgba(7, 0, 12, 0.98) 100%)",
+      "border": "1px solid rgba(160, 32, 255, 0.62)",
+      "borderRadius": "12px",
+      "boxShadow": "0 0 24px rgba(160, 32, 255, 0.34)",
+      "padding": "16px",
+      "backdropFilter": "blur(14px)"
+    },
+    "buttonPrimary": {
+      "background": "linear-gradient(135deg, #C04DFF 0%, #7B00D6 100%)",
+      "color": "#FFFFFF",
+      "border": "1px solid rgba(255,255,255,0.22)",
+      "borderRadius": "8px",
+      "padding": "10px 18px",
+      "fontFamily": "'Oswald', 'Roboto Condensed', sans-serif",
+      "fontWeight": 900,
+      "fontStyle": "italic",
+      "textTransform": "uppercase",
+      "boxShadow": "0 0 22px rgba(160, 32, 255, 0.5)"
+    },
+    "buttonGhost": {
+      "background": "rgba(160, 32, 255, 0.08)",
+      "color": "#C04DFF",
+      "border": "1px solid rgba(160, 32, 255, 0.46)",
+      "borderRadius": "8px",
+      "padding": "8px 14px",
+      "fontWeight": 800,
+      "textTransform": "uppercase"
+    },
+    "sectionHeader": {
+      "display": "flex",
+      "alignItems": "center",
+      "justifyContent": "space-between",
+      "marginBottom": "12px"
+    },
+    "fightList": {
+      "versusColor": "#A020FF",
+      "dateColor": "#E8D0FF",
+      "fighterColor": "#FFFFFF",
+      "categoryColor": "#A875C8",
+      "rowDivider": "1px solid rgba(205, 125, 255, 0.16)"
+    },
+    "rankingTable": {
+      "rowHeight": "34px",
+      "borderColor": "rgba(205, 125, 255, 0.18)",
+      "headerColor": "#A875C8",
+      "bodyColor": "#FFFFFF",
+      "rankColors": {
+        "1": "#FFD447",
+        "2": "#DCD4E8",
+        "3": "#B96A38",
+        "default": "#E8D0FF"
+      },
+      "tabActiveBackground": "#A020FF",
+      "tabInactiveBackground": "rgba(160, 32, 255, 0.12)"
+    },
+    "fightVersusCard": {
+      "fighterAvatarSize": "92px",
+      "versusText": {
+        "color": "#A020FF",
+        "fontSize": "2.4rem",
+        "fontWeight": 900,
+        "fontStyle": "italic"
+      },
+      "arenaIconColor": "#A020FF"
+    },
+    "newsCard": {
+      "imageHeight": "135px",
+      "titleColor": "#FFFFFF",
+      "dateColor": "#A875C8",
+      "usesFallbackImage": true,
+      "fallbackImage": "FeedLutaDestaque.png"
+    },
+    "eventCard": {
+      "logoBoxBackground": "rgba(255, 255, 255, 0.06)",
+      "eventNameColor": "#FFFFFF",
+      "dateColor": "#E8D0FF",
+      "arenaColor": "#A875C8",
+      "rowDivider": "1px solid rgba(205, 125, 255, 0.16)"
+    },
+    "statsCard": {
+      "iconColor": "#A020FF",
+      "valueColor": "#FFFFFF",
+      "labelColor": "#E8D0FF",
+      "descriptionColor": "#A875C8"
+    },
+    "videoCard": {
+      "playButton": {
+        "size": "56px",
+        "background": "rgba(0, 0, 0, 0.56)",
+        "border": "2px solid rgba(255,255,255,0.92)",
+        "iconColor": "#FFFFFF"
+      },
+      "paginationDots": {
+        "activeColor": "#A020FF",
+        "inactiveColor": "rgba(255,255,255,0.36)"
+      }
+    },
+    "athleteRanking": {
+      "avatarSize": "86px",
+      "avatarBorder": "2px solid #A020FF",
+      "rankBadgeBackground": "#A020FF",
+      "rankBadgeColor": "#FFFFFF",
+      "nameColor": "#FFFFFF",
+      "categoryColor": "#E8D0FF",
+      "recordColor": "#A875C8"
+    },
+    "bottomShortcut": {
+      "iconColor": "#A020FF",
+      "titleColor": "#A020FF",
+      "descriptionColor": "#E8D0FF",
+      "borderTop": "1px solid rgba(160, 32, 255, 0.42)"
+    }
+  },
+  "animations": {
+    "pageEntrance": {
+      "type": "fade-up",
+      "durationMs": 650,
+      "easing": "ease-out"
+    },
+    "cardHover": {
+      "transform": "translateY(-4px)",
+      "boxShadow": "0 0 36px rgba(160, 32, 255, 0.58)",
+      "transition": "all 220ms ease"
+    },
+    "buttonHover": {
+      "transform": "translateY(-2px) scale(1.02)",
+      "filter": "brightness(1.12)",
+      "transition": "all 180ms ease"
+    },
+    "heroFightersFloat": {
+      "enabled": true,
+      "animationName": "subtleFightStance",
+      "duration": "5s",
+      "iterationCount": "infinite",
+      "direction": "alternate",
+      "transformRange": "translateY(-6px) translateX(3px)"
+    },
+    "cageSmokePulse": {
+      "enabled": true,
+      "target": "heroBackground lower smoke",
+      "effect": "soft purple smoke pulse behind fighters",
+      "duration": "3.8s",
+      "iterationCount": "infinite"
+    },
+    "backgroundParticles": {
+      "enabled": true,
+      "type": "purple-smoke-and-arena-sparks",
+      "colorPrimary": "rgba(160, 32, 255, 0.6)",
+      "colorSecondary": "rgba(255, 255, 255, 0.16)",
+      "density": "medium",
+      "speed": "slow"
+    }
+  },
+  "accessibility": {
+    "contrastTarget": "WCAG AA",
+    "useSemanticSections": true,
+    "keyboardNavigation": true,
+    "focusStyle": {
+      "outline": "2px solid #A020FF",
+      "outlineOffset": "3px"
+    },
+    "imageAltRequired": true,
+    "ariaLabels": {
+      "liveButton": "Acompanhar transmissão ao vivo",
+      "searchButton": "Pesquisar no site",
+      "notificationsButton": "Abrir notificações",
+      "profileButton": "Abrir perfil",
+      "nextFightDetails": "Ver detalhes da próxima luta",
+      "playHighlightVideo": "Assistir vídeo de destaque",
+      "viewAllFights": "Ver todas as próximas lutas",
+      "viewFullRanking": "Ver ranking oficial completo",
+      "viewAllEvents": "Ver todos os eventos"
+    }
+  },
+  "responsiveBehavior": {
+    "desktop": {
+      "header": "horizontal navigation",
+      "hero": "text left, fighters center, next fight card right",
+      "mainDashboardGrid": "four cards in one row",
+      "secondaryDashboardGrid": "news left, events center, trending athletes right",
+      "bottomShortcuts": "five columns"
+    },
+    "tablet": {
+      "header": "condensed navigation",
+      "hero": "text left, fighters partially visible center-right, next fight below or overlaid",
+      "mainDashboardGrid": "two columns",
+      "secondaryDashboardGrid": "news full width, events and athletes side by side",
+      "bottomShortcuts": "two or three columns"
+    },
+    "mobile": {
+      "header": "hamburger menu recommended",
+      "hero": "text top, fighters below or as background accent, next fight card below hero text",
+      "mainDashboardGrid": "single column stacked cards",
+      "secondaryDashboardGrid": "single column stacked cards",
+      "bottomShortcuts": "single column"
+    }
+  },
+  "imageFallbackStrategy": {
+    "enabled": true,
+    "reason": "Esta página não possui imagens separadas de feed.",
+    "defaultFallbackImage": "FeedLutaDestaque.png",
+    "recommendedBehavior": {
+      "newsCards": "Usar fallback temporário até receber imagens específicas de notícias.",
+      "highlightCards": "Usar fallback temporário ou fundo da arena com overlay escuro.",
+      "eventCards": "Priorizar logos/texto dos eventos; usar imagem somente se existir.",
+      "athleteCards": "Usar avatars de lutadores quando disponíveis; caso contrário, usar placeholder circular com iniciais.",
+      "missingImages": "Resolver com função resolveImage(imageName, fallbackImage)."
+    },
+    "placeholderDesign": {
+      "background": "linear-gradient(135deg, rgba(160, 32, 255, 0.22) 0%, rgba(0, 0, 0, 0.86) 100%)",
+      "icon": "boxing-glove",
+      "iconColor": "#A020FF",
+      "text": "Imagem em breve",
+      "textColor": "#E8D0FF"
+    }
+  }
+}

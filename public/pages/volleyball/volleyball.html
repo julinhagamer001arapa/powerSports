@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PowerSport - Vôlei</title>
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Página esportiva de vôlei com hero principal, próximos jogos, classificação, estatísticas da liga, destaque da rodada, top jogadoras, melhores momentos, notícias em destaque, calendário da liga e atalhos inferiores.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&family=Oswald:wght@500;600;700;900&family=Rajdhani:wght@600;700;900&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="../../../src/css/pages/volleyball.css">
+</head>
+<body class="volleyball-body">
+
+  <!-- HEADER -->
+  <header class="site-header" id="site-header">
+    <div class="header-container">
+      <a href="../../index.html" class="logo-link">
+        <div class="brand-logo">
+          <span class="logo-main">Power</span><span class="logo-highlight">Sport</span>
+        </div>
+      </a>
+      
+      <nav class="nav-menu" id="nav-menu" aria-label="Menu principal">
+        <ul class="nav-list">
+          <li><a href="#inicio" class="nav-link active" id="nav-item-inicio">Início</a></li>
+          <li><a href="#proximos-jogos" class="nav-link" id="nav-item-jogos">Jogos</a></li>
+          <li><a href="#noticias" class="nav-link" id="nav-item-noticias">Notícias</a></li>
+          <li><a href="#classificacao" class="nav-link" id="nav-item-classificacao">Classificação</a></li>
+          <li><a href="#top-jogadoras" class="nav-link" id="nav-item-atletas">Atletas</a></li>
+          <li><a href="#melhores-momentos" class="nav-link" id="nav-item-videos">Vídeos</a></li>
+          <li><a href="#contato" class="nav-link" id="nav-item-contato">Contato</a></li>
+        </ul>
+      </nav>
+      
+      <div class="header-actions">
+        <button class="action-btn" id="action-search" aria-label="Pesquisar" title="Pesquisar">
+          <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2.5" fill="none"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        </button>
+        <button class="action-btn" id="action-notifications" aria-label="Notificações" title="Notificações">
+          <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2.5" fill="none"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+        </button>
+        <button class="action-btn" id="action-profile" aria-label="Perfil" title="Perfil">
+          <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2.5" fill="none"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+        </button>
+        <a href="#ao-vivo" class="live-btn" id="action-live" aria-label="Acompanhar transmissão ao vivo">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" class="broadcast-icon"><circle cx="12" cy="12" r="2"></circle><path d="M16.24 7.76a6 6 0 0 1 0 8.49m-8.48-.01a6 6 0 0 1 0-8.49m11.31-2.82a10 10 0 0 1 0 14.14m-14.14 0a10 10 0 0 1 0-14.14"></path></svg>
+          <span>Ao Vivo</span>
+        </a>
+        <button class="hamburger-btn" id="hamburger-toggle" aria-label="Abrir menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero-section" id="inicio">
+    <div class="hero-bg">
+      <img src="../../../assets/volleyball/hero/FundoVolei.png" alt="Fundo cinematográfico de quadra de vôlei com rede, luzes azuis e partículas amarelas" class="hero-bg-img">
+      <div class="hero-overlay"></div>
+    </div>
+    
+    <div class="hero-container">
+      <div class="hero-content">
+        <h2 class="hero-subtitle">Superação em cada saque.</h2>
+        <h1 class="hero-title">Vôlei</h1>
+        <p class="hero-description">Leveza. Técnica. União. Esse é o nosso jogo!</p>
+        <a href="#ao-vivo" class="btn-primary hero-cta-btn" id="hero-live-btn" aria-label="Acompanhar ao vivo">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" style="margin-right:8px;"><circle cx="12" cy="12" r="2"></circle><path d="M16.24 7.76a6 6 0 0 1 0 8.49m-8.48-.01a6 6 0 0 1 0-8.49m11.31-2.82a10 10 0 0 1 0 14.14m-14.14 0a10 10 0 0 1 0-14.14"></path></svg>
+          <span>Acompanhar ao vivo</span>
+        </a>
+      </div>
+      
+      <!-- Versus Card (Destaque da Rodada Overlay) -->
+      <div class="hero-next-game" id="destaque-da-rodada-card">
+        <div class="card next-game-card">
+          <div class="card-header-simple">
+            <span class="next-game-label">Destaque da Rodada</span>
+          </div>
+          <div class="next-game-body" id="round-highlight-container">
+            <div class="loading-placeholder">Carregando destaque...</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Floating Athlete Foreground Image -->
+    <img src="../../../assets/volleyball/hero/JogadoraVolei.png" alt="Atleta de vôlei saltando para realizar uma jogada com bola azul e amarela" class="hero-player-img">
+  </section>
+
+  <!-- MAIN DASHBOARD GRID -->
+  <main class="main-dashboard-grid" id="dashboard">
+    
+    <!-- UPCOMING GAMES -->
+    <section class="card dashboard-card upcoming-games-card" id="proximos-jogos" aria-labelledby="title-upcoming-games">
+      <div class="card-header">
+        <h3 class="card-title-text" id="title-upcoming-games">Próximos Jogos</h3>
+        <a href="#jogos" class="card-action-link" id="action-upcoming-games">Ver todos</a>
+      </div>
+      <div class="card-body" id="upcoming-games-list">
+        <div class="loading-placeholder">Carregando jogos...</div>
+      </div>
+    </section>
+    
+    <!-- STANDINGS -->
+    <section class="card dashboard-card standings-card" id="classificacao" aria-labelledby="title-standings">
+      <div class="card-header">
+        <h3 class="card-title-text" id="title-standings">Classificação</h3>
+        <a href="#classificacao" class="card-action-link" id="action-standings">Ver tabela completa</a>
+      </div>
+      <div class="card-body standings-table-container">
+        <table class="standings-table">
+          <thead>
+            <tr>
+              <th class="col-pos">Pos</th>
+              <th class="col-team">Time</th>
+              <th class="col-games">J</th>
+              <th class="col-wins">V</th>
+              <th class="col-losses">D</th>
+              <th class="col-pts">PTS</th>
+            </tr>
+          </thead>
+          <tbody id="standings-table-body">
+            <tr>
+              <td colspan="6" class="loading-placeholder">Carregando classificação...</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+    
+    <!-- LEAGUE STATS -->
+    <section class="card dashboard-card league-stats-card" id="estatisticas" aria-labelledby="title-league-stats">
+      <div class="card-header">
+        <h3 class="card-title-text" id="title-league-stats">Estatísticas da Liga</h3>
+        <a href="#estatisticas" class="card-action-link" id="action-league-stats">Ver todas</a>
+      </div>
+      <div class="card-body" id="league-stats-grid">
+        <div class="loading-placeholder">Carregando estatísticas...</div>
+      </div>
+    </section>
+    
+    <!-- TOP PLAYERS (PODIUM) -->
+    <section class="card dashboard-card top-players-card" id="top-jogadoras" aria-labelledby="title-top-players">
+      <div class="card-header">
+        <h3 class="card-title-text" id="title-top-players">Top Jogadoras</h3>
+        <a href="#atletas" class="card-action-link" id="action-top-players">Ver ranking</a>
+      </div>
+      <div class="card-body" id="top-players-container">
+        <div class="loading-placeholder">Carregando top jogadoras...</div>
+      </div>
+    </section>
+    
+  </main>
+
+  <!-- SECONDARY DASHBOARD GRID -->
+  <section class="secondary-dashboard-grid" id="secondary-dashboard">
+    
+    <!-- BEST MOMENTS (VIDEO GRID) -->
+    <section class="card dashboard-card best-moments-card" id="melhores-momentos" aria-labelledby="title-best-moments">
+      <div class="card-header">
+        <h3 class="card-title-text" id="title-best-moments">Melhores Momentos</h3>
+        <a href="#videos" class="card-action-link" id="action-best-moments">Ver todos</a>
+      </div>
+      <div class="card-body grid-videos-container" id="best-moments-grid">
+        <div class="loading-placeholder">Carregando vídeos...</div>
+      </div>
+    </section>
+    
+    <!-- FEATURED NEWS -->
+    <section class="card dashboard-card featured-news-card" id="noticias-feed" aria-labelledby="title-featured-news">
+      <div class="card-header">
+        <h3 class="card-title-text" id="title-featured-news">Notícias em Destaque</h3>
+        <a href="#noticias" class="card-action-link" id="action-featured-news">Ver todas</a>
+      </div>
+      <div class="card-body grid-news-container" id="featured-news-grid">
+        <div class="loading-placeholder">Carregando notícias...</div>
+      </div>
+    </section>
+    
+    <!-- LEAGUE CALENDAR -->
+    <section class="card dashboard-card league-calendar-card" id="calendario-da-liga" aria-labelledby="title-league-calendar">
+      <div class="card-header">
+        <h3 class="card-title-text" id="title-league-calendar">Calendário da Liga</h3>
+        <a href="#calendario" class="card-action-link" id="action-league-calendar">Ver calendário</a>
+      </div>
+      <div class="card-body" id="league-calendar-list">
+        <div class="loading-placeholder">Carregando calendário...</div>
+      </div>
+    </section>
+    
+  </section>
+
+  <!-- BOTTOM SHORTCUTS -->
+  <section class="bottom-shortcuts-strip" id="atalhos-inferiores" aria-label="Atalhos e recursos rápidos">
+    <div class="bottom-shortcuts-container" id="bottom-shortcuts-row">
+      <!-- Populated dynamically -->
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" id="contato">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <span class="logo-main">Power</span><span class="logo-highlight">Sport</span>
+      </div>
+      <p class="footer-copy">&copy; 2026 PowerSport. Todos os direitos reservados. Superação em cada saque.</p>
+    </div>
+  </footer>
+
+  <!-- DYNAMIC MODAL OVERLAY -->
+  <div class="modal-overlay" id="dashboard-modal" aria-hidden="true">
+    <div class="modal-content card">
+      <div class="modal-header">
+        <h3 class="modal-title" id="modal-title">Detalhes</h3>
+        <button class="modal-close-btn" id="modal-close" aria-label="Fechar">&times;</button>
+      </div>
+      <div class="modal-body" id="modal-body">
+        <!-- Populated dynamically by javascript -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="../../../src/js/core/paths.js"></script>
+  <script src="../../../src/js/pages/volleyball.js"></script>
+</body>
+</html>
